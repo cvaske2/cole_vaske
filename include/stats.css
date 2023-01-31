@@ -1,0 +1,54 @@
+.pie-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+h2 {
+  color: #67ff78;
+  font-family: monospace;
+  letter-spacing: 2px;
+  font-size: 42px;
+  margin: 1vw 1vw;
+  text-align: center;
+}
+
+a {
+  color: #67ff78;
+}
+
+/* .pie {
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(red 25%, orange 0% 60%, blue 60%);
+  border-radius: 200px;
+} */
+
+.legend-ext{
+  display: flex;
+  margin: 50px;
+  padding: 10px;
+  border: 2px solid #67ff78;
+  background: black;
+}
+
+.legend {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto;
+  padding: 10px;
+  border: 2px solid #67ff78;
+  color: white;
+  font-family: monospace;
+  font-size: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #132300;
+}
+
+.textbox {
+  color: white;
+  font-family: monospace;
+  font-size: 18px;
+  padding-left: 5px;
+}
