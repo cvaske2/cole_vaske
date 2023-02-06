@@ -2,6 +2,8 @@
     require_once("../include/const.php");
     $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
 
+    $STATIC_TS_CHART_HEIGHT = 200;
+
     $pie_chart = [
         "Chrome" => [
             "color" => "Red",
@@ -87,7 +89,11 @@
                             ".$pie_chart['Firefox']['color']." 0% ".$pie_chart['Firefox']['pct'].", 
                             ".$pie_chart['Edge']['color']." 0% ".$pie_chart['Edge']['pct'].", 
                             ".$pie_chart['Other']['color']." 0% ".$pie_chart['Other']['pct'].");
+                        transition: 0.25s;
                         border-radius: 200px;
+                    }
+                    .pie:hover {
+                        transform: scale(1.2);
                     }
                     .chrome-box {
                         display: flex;
@@ -95,28 +101,43 @@
                         height: 15px;
                         background: ".$pie_chart['Chrome']['color'].";
                         border: 2px solid white;
-                      }
-                      .firefox-box {
+                    }
+                    .firefox-box {
                         display: flex;
                         width: 15px;
                         height: 15px;
                         background: ".$pie_chart['Firefox']['color'].";
                         border: 2px solid white;
-                      }
-                      .edge-box {
+                    }
+                    .edge-box {
                         display: flex;
                         width: 15px;
                         height: 15px;
                         background: ".$pie_chart['Edge']['color'].";
                         border: 2px solid white;
-                      }
-                      .other-box {
+                    }
+                    .other-box {
                         display: flex;
                         width: 15px;
                         height: 15px;
                         background: ".$pie_chart['Other']['color'].";
                         border: 2px solid white;
-                      }
+                    }
+					.timeseries-container {
+                        display: flex;
+                        background: black;
+                        border: 2px solid white;
+                        height: ".$STATIC_TS_CHART_HEIGHT."px;
+                        margin: 20px;
+                        align-items: flex-end;
+                        gap: 5px;
+                        padding: 0px 5px 5px 5px;
+                    }
+
+					.ts-point {
+                        flex-grow: 1;
+						background: white;
+					}
                 </style>
             </head>
             <header>
@@ -126,7 +147,7 @@
                         <li><a href='".HTTP_BASE."/pages/about.php'>About</a></li>
                         <li><a href='".HTTP_BASE."/pages/contact.php'>Contact</a></li>
                         <li><a href='".HTTP_BASE."/pages/ewb.php'>EWB</a></li>
-                        <li><a href='".HTTP_BASE."/pages/stats.php'>Site Stats</a></li>
+                        <li><a href='".HTTP_BASE."/pages/stats.php'><b>Site Stats</b></a></li>
                     </div>
                     <div class='socials'>
                         <a href='https://www.linkedin.com/in/cole-vaske-6644071a2/'>
@@ -140,8 +161,8 @@
             </header>
             <body>
             <h2><b>Browser Access Statistics</b></h2>
-            <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated. Everything you see is done entirely in PHP and CSS.</p>
-            <p>You could sit on my <a href=http://cse.unl.edu/~cvaske>index.html</a> page and hit refresh to see this pie chart and the percentages shift. That being said, I clean it out every now and again.</p>
+            <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated. Everything you see is done entirely in PHP and CSS.</p>
+            <p>You could sit on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and hit refresh to see this pie chart and the percentages shift. That being said, I clean it out every now and again.</p>
             <p>Fun fact: If you are using the Brave browser, your agent is identical to Chrome's, so yours will count as a Chrome visit. You could also spoof your user agent to potentially make this page behave oddly. Good luck, though--I sanitize my inputs.</p>
                 <div class='pie-container'>
                     <div class='pie'></div>
@@ -157,6 +178,40 @@
                             <div class='textbox'>Other: ".$pie_chart["Other"]["actual_pct"]."%</div>
                         </div>
                     </div>
+                </div>
+                <div class='timeseries-container'>
+					<div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 50px'></div>
+                    <div class='ts-point' style='height: 40px'></div>   
+                </div>
+                <div class='ts-dates'>
+                    <p>xx/xx/xxxx</p>
+                    <p>xx/xx/xxxx</p>
+                    <p>xx/xx/xxxx</p>
                 </div>
             </body>
         </html>

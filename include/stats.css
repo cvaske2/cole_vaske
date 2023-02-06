@@ -13,16 +13,10 @@ h2 {
   text-align: center;
 }
 
-a {
+.hyperlink {
   color: #67ff78;
 }
 
-/* .pie {
-  width: 400px;
-  height: 400px;
-  background: conic-gradient(red 25%, orange 0% 60%, blue 60%);
-  border-radius: 200px;
-} */
 
 .legend-ext{
   display: flex;

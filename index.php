@@ -41,14 +41,22 @@
 							<div class='img-container'>
 								<img class='header-img' src='images/me.jpg' alt='Cole Vaske Portrait'>
 							</div>
-							<h1>Cole Vaske</h1>
-							<p>I am a senior Software Engineering student at the University of Nebraska--Lincoln. My career interests include database design and management, and backend systems development.</p><br>
+							<div class='content'>
+								<h1>Cole Vaske</h1>
+								<p>I am a senior Software Engineering student at the University of Nebraska--Lincoln. My career interests include database design and management, and backend systems development.</p><br>
 
-							<h1>Resume</h1>
-							<p>You can download my general resume here:</p>
-							<form action='".HTTP_BASE."/include/Cole_Vaske.pdf'>
-								<button class=button-92>Download PDF</button>
-							</form>
+								<h1>Resume</h1>
+								<p>You can download my general resume here:</p>
+								<form action='".HTTP_BASE."/include/Cole_Vaske.pdf'>
+									<button class='btn-download'>
+										Download PDF
+										<svg class='btn-svg' title='Download' width='21' height='21' viewBox='0 0 24 24' fill='none'>
+											<!-- Acquired from https://www.svgrepo.com/ -->
+											<path d='M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5'></path>
+										</svg>
+									</button>
+								</form>
+							</div>
 						</div>
 					</body>";
 	$html_string .= "</html>\n";
