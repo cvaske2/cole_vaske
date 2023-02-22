@@ -16,7 +16,8 @@ p {
   font-size: 18px;
   padding-left: 15px;
   padding-right: 15px;
-  /* margin: 2.5vw; */
+  margin-top: 1vw;
+  margin-bottom: 0vw;
 }
 
 .img-container {
