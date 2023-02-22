@@ -13,11 +13,13 @@ h1 {
 p {
   color: #ffffff;
   font-family: monospace;
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 1vw;
-  margin-bottom: 0vw;
+}
+
+a {
+  color: #67ff78;
 }
 
 .img-container {
@@ -30,22 +32,6 @@ p {
   height: 400px;
   width: 400px;
 }
-
-/* button {
-  background: #132300;
-  color: #67ff78;
-  font-family: monospace;
-  border: 1px solid #67ff78;
-  padding: 10px 25px;
-  transition-duration: 0.25s;
-}
-button:hover {
-  background: #67ff78;
-  color: #132300;
-  font-family: monospace;
-  border: none;
-  padding: 10px 25px;
-} */
 
 main {
   margin: 0 1.5vw;
@@ -112,8 +98,9 @@ header li a:hover {
   transition-duration: 0.25s;
 }
 
-.btn-download:hover ~ {
+.btn-download:hover {
   background: #26de3c;
+  stroke: #132300;
   color: #132300;
 }
 

@@ -51,13 +51,13 @@
 
 								<h1>Current Experiences</h1>
 								<p>For my second year of capstone, I have had the opportunity to work with several other senior Software Engineering students to develop a piece of software with the intent to become a startup. My primary role wtihin this team is to utilize Amazon Web Service to create an API that interfaces with AWS DynamoDB to store and display JSON-like data. This is an ongoing project involving managing an AWS organization and their roles, as well as the services we are using to make our startup project come to fruition.</p>
-								<p>I currently intern with Huffman Engineering, Inc. (HEI) with their industrial group. My primary concern is industrial automation, and pharmaceutical IT maintenance and regulatory compliance. With HEI, I have had the privilege to learn aobout manufacturing and utilities processes from many of their clients, as well as gain an Ignition HMI/SCADA software certification.</p>
+								<p>I currently intern with Huffman Engineering, Inc. (HEI) with their industrial group. My primary concern is industrial automation, and pharmaceutical IT maintenance and regulatory compliance. With HEI, I have had the privilege to learn aobout manufacturing and utilities processes from many of their clients, as well as gain an <a href='https://inductiveautomation.com'>Ignition SCADA software</a> certification.</p>
 								<p>I also currently work as a Dean's Leader with the College of Engineering. This role primarily deals with helping prospective students looking at engineering and computing decide on a major based on their interests and showcase all of the opportunities available at the College of Engineering and the School of Computing at the University of Nebraska--Lincoln.</p>
 
 								<h1>Resume</h1>
-								<p>You can download my general resume here:</p>
 								<form action='".HTTP_BASE."/include/Cole_Vaske.pdf'>
-									<button class='btn-download'>
+									<p>You can download my general resume here:</p>
+									<button class='btn-download' download='".HTTP_BASE."/include/Cole_Vaske.pdf'>
 										Download PDF
 										<svg class='btn-svg' title='Download' width='21' height='21' viewBox='0 0 24 24' fill='none'>
 											<!-- Acquired from https://www.svgrepo.com/ -->
