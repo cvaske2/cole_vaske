@@ -1,5 +1,6 @@
 <?php
     require_once("../include/const.php");
+    require_once("../include/callbacks.php");
     $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
 
     $html_string = "
@@ -27,6 +28,7 @@
                     </div>
                 </ul>
             </header>
+            ".displayWarningBlock()."
         </html>
     ";
 

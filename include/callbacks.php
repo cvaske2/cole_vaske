@@ -1,6 +1,8 @@
 <?php
 	define("USER_AGENTS_FILE", "/home/ugrad/cvaske/public_html/logs/user_agents.tsv"); // file to collect user agents -- use absolute path because it is included elsewhere
 
+    $BASE_DIR_PREFIX = "../";
+
     // function addChromeNote($agent)
     // {
     //     $chrome_pos = strpos($agent, "Chrome/"); // will return -1 if not found, making following conditional false
@@ -29,5 +31,39 @@
         $fp = fopen(USER_AGENTS_FILE, 'a');
         fwrite($fp, $input_string);
         fclose($fp);
+    }
+
+    // TODO: Change or get rid of this default parameter, preferably get rid of the parameter altogether if possible
+    function displayWarningBlock($BASE_DIR = "../")
+    {
+        return "
+            <style type='text/css'>
+                .container-warning {
+                    display: grid;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: .1fr 1fr .1fr;
+                    border: 3px solid red;
+                    background: black;
+                    margin: 2vw;
+                }
+                
+                .warning {
+                    font-size: 20px;
+                }
+                
+                .warning-png {
+                    display: block;
+                    margin: auto;
+                    width: 70px;
+                    height: auto;
+                }
+            </style>
+            <div class='container-warning'>
+                <!-- Image obtained from https://openclipart.org/ -->
+                <img class='warning-png' src='".$BASE_DIR."images/warning.png'>
+                <p><b class='warning'>WARNING!</b> This page is still under heavy construction. I left this unfinished page on the production site because I still think it is interesting and a display of what I am currently working on. Feel free to browse, but know that you may run into issues as it is an unfinished product.</p>
+                <img class='warning-png' src='".$BASE_DIR."images/warning.png'>
+            </div>
+        ";
     }
 ?>

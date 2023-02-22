@@ -1,6 +1,6 @@
 <?php
-	require_once("./include/callbacks.php");
 	require_once("./include/const.php");
+	require_once("./include/callbacks.php");
 
 	$html_string = "<html>
 						<head>
@@ -37,6 +37,7 @@
 							</div>
 						</ul>
 					</header>
+					".displayWarningBlock("")."
 					<body>
 						<div>
 							<div class='img-container'>
