@@ -1,0 +1,33 @@
+.img-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  
+  .header-img {
+    height: 400px;
+    width: 400px;
+  }
+
+  .btn-download {
+    background: none;
+    color: #26de3c;
+    padding: 15px 32px;
+    border: 2px solid #26de3c;
+    transition-duration: 0.25s;
+  }
+  
+  .btn-download:hover {
+    background: #26de3c;
+    stroke: #132300;
+    color: #132300;
+  }
+  
+  .btn-svg-container {
+    margin-top: 5px;
+  }
+  
+  .btn-svg {
+    stroke:#26de3c;
+  }
+  

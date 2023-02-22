@@ -6,6 +6,7 @@
 						<head>
 							<title>Cole Vaske</title>
 							<link rel='stylesheet' href='include/styles.css'>
+							<link rel='stylesheet' href='include/index.css'>
 						</head>";
 
 	$agent = null;
@@ -41,7 +42,7 @@
 							<div class='img-container'>
 								<img class='header-img' src='images/me.jpg' alt='Cole Vaske Portrait'>
 							</div>
-							<div class='content'>
+							<main>
 								<h1>Cole Vaske</h1>
 								<p>I am a senior Software Engineering student at the University of Nebraska--Lincoln. My career interests include database design and management, and backend systems development.</p>
 
@@ -65,7 +66,7 @@
 										</svg>
 									</button>
 								</form>
-							</div>
+							</main>
 						</div>
 					</body>";
 	$html_string .= "</html>\n";
