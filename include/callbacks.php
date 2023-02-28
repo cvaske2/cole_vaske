@@ -46,22 +46,27 @@
                     background: black;
                     margin: 2vw;
                 }
-                
                 .warning {
                     font-size: 20px;
                 }
-                
                 .warning-png {
                     display: block;
                     margin: auto;
                     width: 70px;
                     height: auto;
                 }
+                .warn-text {
+                    color: #ffffff;
+                    font-family: monospace;
+                    font-size: 18px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                  }
             </style>
             <div class='container-warning'>
                 <!-- Image obtained from https://openclipart.org/ -->
                 <img class='warning-png' src='".$BASE_DIR."images/warning.png'>
-                <p><b class='warning'>WARNING!</b> This page is still under heavy construction. I left this unfinished page on the production site because I still think it is interesting and a display of what I am currently working on. Feel free to browse, but know that you may run into issues as it is an unfinished product.</p>
+                <p class='warn-text'><b class='warning'>WARNING!</b> This page is still under heavy construction. I left this unfinished page on the production site because I still think it is interesting and a display of what I am currently working on. Feel free to browse, but know that you may run into issues as it is an unfinished product.</p>
                 <img class='warning-png' src='".$BASE_DIR."images/warning.png'>
             </div>
         ";

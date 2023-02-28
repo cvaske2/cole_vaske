@@ -141,6 +141,7 @@
 					}
                 </style>
             </head>
+            <a id='top'></a>
             <header>
                 <ul>
                     <div class='pages'>
@@ -161,7 +162,7 @@
                 </ul>
             </header>
                 ".displayWarningBlock()."
-            <body>
+            <main>
                 <h2><b>Browser Access Statistics</b></h2>
                 <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated. Everything you see is done entirely in PHP and CSS.</p>
                 <p>You could sit on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and hit refresh to see this pie chart and the percentages shift. That being said, I clean it out every now and again.</p>
@@ -215,8 +216,11 @@
                     <p>xx/xx/xxxx</p>
                     <p>xx/xx/xxxx</p>
                 </div>
-            </body>
+            </main>
         </html>
+        <footer>
+            <a href='#top'>Back to top</a>
+        </footer>
     ";
 
     echo $html_string;

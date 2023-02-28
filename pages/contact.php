@@ -9,6 +9,7 @@
                 <title>Cole Vaske</title>
                 <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/styles.css'>
             </head>
+            <a id='top'></a>
             <header>
                 <ul>
                     <div class='pages'>
@@ -29,6 +30,11 @@
                 </ul>
             </header>
             ".displayWarningBlock()."
+            <main>
+            </main>
+            <footer>
+                <a href='#top'>Back to top</a>
+            </footer>
         </html>
     ";
 
