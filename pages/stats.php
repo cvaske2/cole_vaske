@@ -165,8 +165,7 @@
             <main>
                 <h2><b>Browser Access Statistics</b></h2>
                 <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated. Everything you see is done entirely in PHP and CSS.</p>
-                <p>You could sit on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and hit refresh to see this pie chart and the percentages shift. That being said, I clean it out every now and again.</p>
-                <p>Fun fact: If you are using the Brave browser, your agent is identical to Chrome's, so yours will count as a Chrome visit. You could also spoof your user agent to potentially make this page behave oddly. Good luck, though--I sanitize my inputs.</p>
+                <p>You could sit on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and hit refresh to see this pie chart and the percentages shift. That being said, I clean out the .tsv file I use to store the user agents every now and again.</p>
                 <div class='pie-container'>
                     <div class='pie'></div>
                     <div class='legend-ext'>
