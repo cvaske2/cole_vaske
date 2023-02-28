@@ -93,9 +93,6 @@
                         transition: 0.25s;
                         border-radius: 200px;
                     }
-                    .pie:hover {
-                        transform: scale(1.2);
-                    }
                     .chrome-box {
                         display: flex;
                         width: 15px;
