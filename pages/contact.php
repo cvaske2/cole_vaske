@@ -30,7 +30,6 @@
                     </div>
                 </ul>
             </header>
-            ".displayWarningBlock()."
 			".displayClassBlock()."
             <main>
 				<form id='contactForm'>
