@@ -8,12 +8,18 @@ legend {
 fieldset {
     border-color: #67ff78;
     margin-right: 15px;
-    width: 50%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 textarea {
     width: 100%;
+    min-width: 500px;
+    max-width: 90vw;
     height: 150px;
+    min-height: 45px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -21,19 +27,11 @@ textarea {
     color: #ffffec;
     background-color: #021300;
     font-size: 16px;
-    resize: none;
+    margin-bottom: 15px;
 }
 
-tr {
-    color: #ffffec;
-    min-height: 100vh;
-    font-family: monospace;
-    font-size: 18px;
-    margin-left: 15px;
-  }
-
   .email-txt {
-    width: 100%;
+    width: 30vw;
     padding: 5px 5px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -43,18 +41,6 @@ tr {
     font-size: 16px;
     resize: none;
 }
-
-/* .submit-btn {
-    padding: 5px 5px;
-    font-size: 1vw;
-    width: 20vw;
-    margin-top: 15px;
-    border: 2px solid #26de3c;
-    color: #26de3c;
-    background-color: #132300;
-    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
-
-} */
 
 .submit-btn {
     font-family: "Open Sans", sans-serif;
@@ -70,6 +56,10 @@ tr {
     padding: 0.5em 1em;
     box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
     position: relative;
+}
+
+.email-regex-warning {
+    font-size: 18px;
 }
 
 .submit-btn:active {

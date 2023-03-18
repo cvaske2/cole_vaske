@@ -32,82 +32,26 @@
             </header>
 			".displayClassBlock()."
             <main>
+				<h1>Contact Me</h1>
+				<p>Use this form as a quick means of getting in touch with me.</p>
+				<p>You can also contact me via e-mail at <a href='mailto:colevaske@outlook.com'>colevaske@outlook.com</a>.</p>
 				<form id='contactForm'>
 					<fieldset>
-						<legend>Message</legend> 
-						<table>
-							<tr>
-							<td>Type your Message here</td>
-							</tr>
-							<tr>
-								<td><textarea name='message' id='message' rows='5' cols='70'></textarea></td>
-							</tr>
-							<tr>
-								<td>Rate my site out of 5 stars!</td>
-							</tr>
-						</table>
-						<table>
-							<tr>
-								<td><i>[1 star]</i></td>
-								<td><input type='radio' id='rad1' name='radio-group'></td>
-								<td><input type='radio' id='rad2' name='radio-group'></td>
-								<td><input type='radio' id='rad3' name='radio-group'></td>
-								<td><input type='radio' id='rad4' name='radio-group'></td>
-								<td><input type='radio' id='rad5' name='radio-group'></td>
-								<td><i>[5 star]</i></td>
-							</tr>
-						</table>
-						<br>
-						<table>
-							<tr>
-								<td>Leave your e-mail so I can contact you</td>
-							</tr>
-							<tr>
-								<td>
-									<input class='email-txt' type='text' name='email' id='email'>
-								</td>
-							</tr>
-						</table>
+						<legend>Leave Your Message</legend> 
+						<span>Type your Message here</span>
+						<textarea name='message' id='message' rows='5' cols='70'></textarea>
+						<span>Leave your e-mail so I can respond to you</span>
+						<span class='email-regex-warning'>Invalid e-mail format</span>
+						<input class='email-txt' type='text' name='email' id='email'>
 					</fieldset>
-				<td>
-					<button class='submit-btn' onclick='submitForm()'>Submit Button</btn>
-				</td>
-			</form>
+					<script src='".$BASE_DIR_PREFIX."include/js/contact.js'></script>
+					<button class='submit-btn' type='submit' onclick='submitForm(event)'>Submit</btn>
+				</form>
             </main>
             <footer>
                 <a href='#top'>Back to top</a>
             </footer>
         </html>
-		<script>
-			function getRating(form) {
-				if (form.rad1.checked)
-				return 1;
-				else if (form.rad2.checked)
-				return 2;
-				else if (form.rad3.checked)
-				return 3;
-				else if (form.rad4.checked)
-				return 4;
-				else if (form.rad5.checked)
-				return 5;
-				return null;
-			}
-			console.log('we in here');
-			function submitForm() {
-				var contactForm = document.getElementById('contactForm');
-				console.log(contactForm);
-				var message = contactForm.message.value;
-				var rating = getRating(contactForm);
-				var email = contactForm.email.value;
-
-				rating = rating === null ? '<no rating given>' : rating + '/5';
-				
-				var word_count = message === '' ? 0 : (message.match(/ /g) || []).length + 1;
-
-				var output = `Number of words: \${word_count}\nYour rating: \${rating}\nYour supplied e-mail: \${email}`;
-				alert(output);
-			}
-		</script>
     ";
 
     echo $html_string;

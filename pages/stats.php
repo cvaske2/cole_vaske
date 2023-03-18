@@ -146,7 +146,7 @@
                         <li><a href='".HTTP_BASE."/pages/about.php'>About</a></li>
                         <li><a href='".HTTP_BASE."/pages/contact.php'>Contact</a></li>
                         <li><a href='".HTTP_BASE."/pages/ewb.php'>EWB</a></li>
-                        <li><a href='".HTTP_BASE."/pages/stats.php'><b>Site Stats</b></a></li>
+                        <li><a href='".HTTP_BASE."/pages/stats.php'>Site Stats</a></li>
                     </div>
                     <div class='socials'>
                         <a href='https://www.linkedin.com/in/cole-vaske-6644071a2/'>
