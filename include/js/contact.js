@@ -34,7 +34,7 @@ function submitForm(event) {
         document.getElementById('regex_warning').style.visibility = 'visible';
         missing_fields = true;
     } else {
-        contactForm.message.style.border = defaultBorderColor;
+        contactForm.email.style.border = defaultBorderColor;
         contactForm.email.placeholder = '';
         document.getElementById('regex_warning').style.visibility = 'collapse';
     }

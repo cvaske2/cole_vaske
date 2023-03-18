@@ -1,7 +1,7 @@
 <?php
     require_once("../include/const.php");
     require_once("../include/callbacks.php");
-    $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
+    define('BASE_DIR_PREFIX' , "../"); // Prefix to the base dir (for images, etc.)
 
     // $EMAIL_REGEX = "/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/";
     $validated_parameters = true;
@@ -76,7 +76,7 @@
                             <span style='visibility: collapse;' name='regex_warning' id='regex_warning'>Invalid e-mail format. Try again and resubmit.</span>
                             <input type='text' name='email' id='email'>
                         </fieldset>
-                        <script src='".$BASE_DIR_PREFIX."include/js/contact.js'></script>
+                        <script src='".BASE_DIR_PREFIX."include/js/contact.js'></script>
                         <button class='submit-btn' type='submit' onclick='submitForm(event)'>Submit</btn>
                     </form>
                 </main>
