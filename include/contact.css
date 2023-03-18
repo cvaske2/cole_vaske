@@ -30,7 +30,7 @@ textarea {
     margin-bottom: 15px;
 }
 
-  .email-txt {
+#email {
     width: 30vw;
     padding: 5px 5px;
     box-sizing: border-box;
@@ -58,8 +58,9 @@ textarea {
     position: relative;
 }
 
-.email-regex-warning {
-    font-size: 18px;
+#regex_warning {
+    font-size: 14px;
+    color: red;
 }
 
 .submit-btn:active {

@@ -38,11 +38,14 @@
 				<form id='contactForm'>
 					<fieldset>
 						<legend>Leave Your Message</legend> 
+
 						<span>Type your Message here</span>
 						<textarea name='message' id='message' rows='5' cols='70'></textarea>
+
 						<span>Leave your e-mail so I can respond to you</span>
-						<span class='email-regex-warning'>Invalid e-mail format</span>
-						<input class='email-txt' type='text' name='email' id='email'>
+                        <!-- inline stlying on visibility because of how DOM styling is initailized and never rescanned -->
+						<span style='visibility: collapse;' name='regex_warning' id='regex_warning'>Invalid e-mail format. Try again and resubmit.</span>
+						<input type='text' name='email' id='email'>
 					</fieldset>
 					<script src='".$BASE_DIR_PREFIX."include/js/contact.js'></script>
 					<button class='submit-btn' type='submit' onclick='submitForm(event)'>Submit</btn>

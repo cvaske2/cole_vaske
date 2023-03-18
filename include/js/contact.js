@@ -7,36 +7,36 @@ var defaultBorderColor = null;
 window.onload = function() {
 
     contactForm = document.getElementById('contactForm');
-    defaultBorderColor = contactForm.message.style.borderColor;
+    defaultBorderColor = contactForm.message.style.border;
 }
 
 function submitForm(event) {
    
-        
     let missing_fields = false;
 
     let message = contactForm.message.value;
     if (message === '') {
-        contactForm.message.style.borderColor = 'red';
+        contactForm.message.style.border = '2px solid red';
         contactForm.message.placeholder = 'Empty submissions not accepted';
         missing_fields = true;
     } else {
-        contactForm.message.style.borderColor = defaultBorderColor;
+        contactForm.message.style.border = defaultBorderColor;
         contactForm.message.placeholder = '';
     }
 
     let email = contactForm.email.value;
     if (email === '') {
-        contactForm.email.style.borderColor = 'red';
+        contactForm.email.style.border = '2px solid red';
         contactForm.email.placeholder = 'Please leave your e-mail';
         missing_fields = true;
     } else if (!email_regex.test(email)) {
-        alert("bad");
-        contactForm.email.style.borderColor = 'red';
+        contactForm.email.style.border = '2px solid red';
+        document.getElementById('regex_warning').style.visibility = 'visible';
         missing_fields = true;
     } else {
-        contactForm.message.style.borderColor = defaultBorderColor;
+        contactForm.message.style.border = defaultBorderColor;
         contactForm.email.placeholder = '';
+        document.getElementById('regex_warning').style.visibility = 'collapse';
     }
 
     if (missing_fields) {
