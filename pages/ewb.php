@@ -32,31 +32,11 @@
             </header>
             ".displayClassBlock()."
             <main>
-                <h1>Select a Background Color</h1>
-                <div class='dropdown-container'>
-                    <button class='dropdown-btn'>Background Color</button>
-                    <div class='dropdown-options'>
-                        <p class='dropdown-item' onclick=\"changeBackgroundColor('green')\">Green</p>
-                        <p class='dropdown-item' onclick=\"changeBackgroundColor('brown')\">Brown</p>
-                        <p class='dropdown-item' onclick=\"changeBackgroundColor('purple')\">Purple</p>
-                    </div>
-                </div>
             </main>
             <footer>
                 <a href='#top'>Back to top</a>
             </footer>
         </html>
-        <script>
-            function changeBackgroundColor(color) {
-                console.log('we in here');
-                const color_codes = {
-                    green: '#132300',
-                    brown: '#432300',
-                    purple: '#35004a'
-                };
-                document.body.style.backgroundColor = color_codes[color];
-            }
-        </script>
     ";
 
     echo $html_string;
