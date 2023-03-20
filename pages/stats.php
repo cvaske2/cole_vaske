@@ -79,8 +79,8 @@
         <html>
             <head>
                 <title>Cole Vaske</title>
-                <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/styles.css'>
-                <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/stats.css'>
+                <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/styles.css'>
+                <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/stats.css'>
                 <style type='text/css'>
                     .pie {
                         width: 400px;

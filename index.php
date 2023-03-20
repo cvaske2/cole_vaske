@@ -5,8 +5,8 @@
 	$html_string = "<html>
 						<head>
 							<title>Cole Vaske</title>
-							<link rel='stylesheet' href='include/styles.css'>
-							<link rel='stylesheet' href='include/index.css'>
+							<link rel='stylesheet' href='include/css/styles.css'>
+							<link rel='stylesheet' href='include/css/index.css'>
 						</head>";
 
 	$agent = null;

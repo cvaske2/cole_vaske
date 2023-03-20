@@ -20,8 +20,8 @@
         <html>
             <head>
                 <title>Cole Vaske</title>
-                <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/styles.css'>
-				<link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/contact.css'>
+                <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/styles.css'>
+				<link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/contact.css'>
             </head>
             <a id='top'></a>
             <header>
