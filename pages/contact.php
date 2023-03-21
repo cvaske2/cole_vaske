@@ -22,6 +22,8 @@
                 <title>Cole Vaske</title>
                 <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/styles.css'>
 				<link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/contact.css'>
+                <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
+                <script src='".BASE_DIR_PREFIX."include/js/contact.js'></script>
             </head>
             <a id='top'></a>
             <header>
@@ -76,7 +78,6 @@
                             <span style='visibility: collapse;' name='regex_warning' id='regex_warning'>Invalid e-mail format. Try again and resubmit.</span>
                             <input type='text' name='email' id='email'>
                         </fieldset>
-                        <script src='".BASE_DIR_PREFIX."include/js/contact.js'></script>
                         <button class='submit-btn' type='submit' onclick='submitForm(event)'>Submit</btn>
                     </form>
                 </main>

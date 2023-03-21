@@ -4,11 +4,11 @@ const email_regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|
 var contactForm = null;
 var defaultBorderColor = null;
 
-window.onload = function() {
+window.addEventListener('load', function() {
 
     contactForm = document.getElementById('contactForm');
     defaultBorderColor = contactForm.message.style.border;
-}
+});
 
 function submitForm(event) {
    
