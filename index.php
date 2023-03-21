@@ -2,14 +2,6 @@
 	require_once("./include/const.php");
 	require_once("./include/callbacks.php");
 
-	$html_string = "<html>
-						<head>
-							<title>Cole Vaske</title>
-							<link rel='stylesheet' href='include/css/styles.css'>
-							<link rel='stylesheet' href='include/css/index.css'>
-							<script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
-						</head>";
-
 	$agent = null;
 
 	try {
@@ -18,7 +10,14 @@
 		$agent = -1;
 	}
 	
-	$html_string .= "
+	$html_string = "
+					<html>
+						<head>
+							<title>Cole Vaske</title>
+							<link rel='stylesheet' href='include/css/styles.css'>
+							<link rel='stylesheet' href='include/css/index.css'>
+							<script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
+						</head>
 						<a id='top'></a>
 						<header>
 							<ul>
