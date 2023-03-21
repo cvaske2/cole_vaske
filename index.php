@@ -7,6 +7,7 @@
 							<title>Cole Vaske</title>
 							<link rel='stylesheet' href='include/css/styles.css'>
 							<link rel='stylesheet' href='include/css/index.css'>
+							<script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
 						</head>";
 
 	$agent = null;

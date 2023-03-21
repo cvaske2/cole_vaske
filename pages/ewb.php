@@ -9,6 +9,7 @@
                 <title>Cole Vaske</title>
                 <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/styles.css'>
                 <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/ewb.css'>
+                <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
             </head>
             <a id='top'></a>
             <header>

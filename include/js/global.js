@@ -4,8 +4,9 @@ window.addEventListener('load', function() {
         brown: '#432300',
         purple: '#35004a'
     };
-    console.log("in here")
+    let bg_color = this.localStorage.getItem("color");
 
-    // contactForm = document.getElementById('contactForm');
-    // defaultBorderColor = contactForm.message.style.border;
+    if (bg_color !== null) {
+        document.body.style.backgroundColor = color_codes[bg_color];
+    }
 });
