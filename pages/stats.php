@@ -140,26 +140,8 @@
                 <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
             </head>
             <a id='top'></a>
-            <header>
-                <ul>
-                    <div class='pages'>
-                        <li><a href='".HTTP_BASE."/'>Home</a></li>
-                        <li><a href='".HTTP_BASE."/pages/about.php'>About</a></li>
-                        <li><a href='".HTTP_BASE."/pages/contact.php'>Contact</a></li>
-                        <li><a href='".HTTP_BASE."/pages/ewb.php'>EWB</a></li>
-                        <li><a href='".HTTP_BASE."/pages/stats.php'>Site Stats</a></li>
-                    </div>
-                    <div class='socials'>
-                        <a href='https://www.linkedin.com/in/cole-vaske-6644071a2/'>
-                            <img src='".$BASE_DIR_PREFIX."images/linkedin.svg'>
-                        </a>
-                        <a href='https://github.com/cvaske2'>
-                            <img src='".$BASE_DIR_PREFIX."images/github.svg'>
-                        </a>
-                    </div>
-                </ul>
-            </header>
-                ".displayWarningBlock()."
+            ".HEADER_STRING."
+            ".WARNING_BLOCK."
             <main>
                 <h2><b>Browser Access Statistics</b></h2>
                 <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated. Everything you see is done entirely in PHP and CSS.</p>
