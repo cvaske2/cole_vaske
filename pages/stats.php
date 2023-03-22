@@ -1,6 +1,5 @@
 <?php
     require_once("../include/const.php");
-    require_once("../include/callbacks.php");
     $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
 
     $STATIC_TS_CHART_HEIGHT = 200;
