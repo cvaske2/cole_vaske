@@ -7,12 +7,22 @@
     define("HEADER_STRING", 
         "<header>
             <ul>
-                <div class='pages'>
+                <div>
                     <li><a href='".HTTP_BASE."/'>Home</a></li>
                     <li><a href='".HTTP_BASE."/pages/about.php'>About</a></li>
                     <li><a href='".HTTP_BASE."/pages/contact.php'>Contact</a></li>
                     <li><a href='".HTTP_BASE."/pages/ewb.php'>EWB</a></li>
                     <li><a href='".HTTP_BASE."/pages/stats.php'>Site Stats</a></li>
+                    <li>
+                        <div class='dropdown-container'>
+                            <button class='dropdown-btn'>Background Color</button>
+                            <div class='dropdown-options'>
+                                <p class='dropdown-item' onclick=\"changeBackgroundColor('green')\">Green</p>
+                                <p class='dropdown-item' onclick=\"changeBackgroundColor('brown')\">Brown</p>
+                                <p class='dropdown-item' onclick=\"changeBackgroundColor('purple')\">Purple</p>
+                            </div>
+                        </div>
+                    </li>
                 </div>
                 <div class='socials'>
                     <a href='https://www.linkedin.com/in/cole-vaske-6644071a2/'>
