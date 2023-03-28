@@ -44,6 +44,7 @@ header ul {
   
 header li {
   float: left;
+  margin: 0px 20px;
 }
 
 header li a {
@@ -53,8 +54,7 @@ header li a {
   font-size: 25px;
   text-align: center;
   text-decoration: none;
-  padding: 14px 16px;
-  margin: 0px 20px;
+  padding: 14px 0px;
   background-image: linear-gradient(to right, #004909, #00f11c);
   background-position: bottom left;
   background-size: 0% 2px;
