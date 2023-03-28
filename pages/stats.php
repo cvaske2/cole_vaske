@@ -3,6 +3,7 @@
     $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
 
     $STATIC_TS_CHART_HEIGHT = 200;
+    $PIE_CHART_VH = 70;
 
     $pie_chart = [
         "Chrome" => [
@@ -82,43 +83,38 @@
                 <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/stats.css'>
                 <style type='text/css'>
                     .pie {
-                        width: 400px;
-                        height: 400px;
+                        width: ".$PIE_CHART_VH."vh;
+                        height: ".$PIE_CHART_VH."vh;
                         /* background: conic-gradient(<color> <end%>, <color> <start% -or- 0%> <end%>, ..., <color> <start%>); */
                         background: conic-gradient(".$pie_chart['Chrome']['color']." ".$pie_chart['Chrome']['pct'].", 
                             ".$pie_chart['Firefox']['color']." 0% ".$pie_chart['Firefox']['pct'].", 
                             ".$pie_chart['Edge']['color']." 0% ".$pie_chart['Edge']['pct'].", 
                             ".$pie_chart['Other']['color']." 0% ".$pie_chart['Other']['pct'].");
-                        transition: 0.25s;
-                        border-radius: 200px;
+                        border-radius: ".$PIE_CHART_VH."vh;
                     }
                     .chrome-box {
-                        display: flex;
-                        width: 15px;
-                        height: 15px;
+                        width: 2vw;
+                        height: 2vw;
                         background: ".$pie_chart['Chrome']['color'].";
-                        border: 2px solid white;
+                        border: 3px solid white;
                     }
                     .firefox-box {
-                        display: flex;
-                        width: 15px;
-                        height: 15px;
+                        width: 2vw;
+                        height: 2vw;
                         background: ".$pie_chart['Firefox']['color'].";
-                        border: 2px solid white;
+                        border: 3px solid white;
                     }
                     .edge-box {
-                        display: flex;
-                        width: 15px;
-                        height: 15px;
+                        width: 2vw;
+                        height: 2vw;
                         background: ".$pie_chart['Edge']['color'].";
-                        border: 2px solid white;
+                        border: 3px solid white;
                     }
                     .other-box {
-                        display: flex;
-                        width: 15px;
-                        height: 15px;
+                        width: 2vw;
+                        height: 2vw;
                         background: ".$pie_chart['Other']['color'].";
-                        border: 2px solid white;
+                        border: 3px solid white;
                     }
 					.timeseries-container {
                         display: flex;
@@ -130,7 +126,6 @@
                         gap: 5px;
                         padding: 0px 5px 5px 5px;
                     }
-
 					.ts-point {
                         flex-grow: 1;
 						background: white;
@@ -142,26 +137,41 @@
             ".HEADER_STRING."
             ".WARNING_BLOCK."
             <main>
-                <h2><b>Browser Access Statistics</b></h2>
-                <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated. Everything you see is done entirely in PHP and CSS.</p>
-                <p>You could sit on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and hit refresh to see this pie chart and the percentages shift. That being said, I clean out the .tsv file I use to store the user agents every now and again.</p>
+                <h2 style='margin: none;'>Browser Access Statistics</h2>
+                <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated.</p>
+                <p><b><u>This page is not intended to be practical</u></b>--a better method for generating these visualizations would be to use a JS library or some kind of backend image generation process. The point was to improve my HTML and CSS skills as well as use PHP in a fun way.</p>
+                <h2>Visitor Browser Distribution</h2>
                 <div class='pie-container'>
                     <div class='pie'></div>
                     <div class='legend-ext'>
-                        <div class='legend'>
-                            <div class='chrome-box'></div>
-                            <div class='textbox'>Chrome: ".$pie_chart["Chrome"]["actual_pct"]."%</div>
-                            <div class='firefox-box'></div>
-                            <div class='textbox'>Firefox: ".$pie_chart["Firefox"]["actual_pct"]."%</div>
-                            <div class='edge-box'></div>
-                            <div class='textbox'>Edge: ".$pie_chart["Edge"]["actual_pct"]."%</div>
-                            <div class='other-box'></div>
-                            <div class='textbox'>Other: ".$pie_chart["Other"]["actual_pct"]."%</div>
-                        </div>
+                        <table class='legend'>
+                            <tr>
+                                <td><div class='chrome-box'></div></td>
+                                <td>Chrome: </td>
+                                <td class='pct-cell'>".$pie_chart["Chrome"]["actual_pct"]."%</td>
+                            </tr>
+                            <tr>
+                                <td><div class='firefox-box'></div></td>
+                                <td>Firefox: </td>
+                                <td class='pct-cell'>".$pie_chart["Firefox"]["actual_pct"]."%</td>
+                            </tr>
+                            <tr>
+                                <td><div class='edge-box'></div></td>
+                                <td>Edge: </td>
+                                <td class='pct-cell'>".$pie_chart["Edge"]["actual_pct"]."%</td>
+                            </tr>
+                            <tr>
+                                <td><div class='other-box'></div></td>
+                                <td>Other: </td>
+                                <td class='pct-cell'>".$pie_chart["Other"]["actual_pct"]."%</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
+                <br><br><br><br><br>
+                <h2>Visitor Access Logs</h2>
                 <div class='timeseries-container'>
-					<div class='ts-point' style='height: 150px'></div>
+                    <div class='ts-point' style='height: 150px'></div>
                     <div class='ts-point' style='height: 50px'></div>
                     <div class='ts-point' style='height: 40px'></div>
                     <div class='ts-point' style='height: 150px'></div>

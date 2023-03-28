@@ -1,7 +1,7 @@
 .pie-container {
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 5vh;
 }
 
 h2 {
@@ -9,8 +9,15 @@ h2 {
   font-family: monospace;
   letter-spacing: 2px;
   font-size: 42px;
-  margin: 1vw 1vw;
+  margin: 5vh 1vw 0vh 0vw;
   text-align: center;
+}
+
+h3 {
+  color: #67ff78;
+  font-family: monospace;
+  font-size: 24px;
+
 }
 
 .hyperlink {
@@ -20,29 +27,26 @@ h2 {
 
 .legend-ext{
   display: flex;
+  height: min-content;
   margin: 50px;
   padding: 10px;
-  border: 2px solid #67ff78;
+  border: 5px solid #67ff78;
   background: black;
 }
 
 .legend {
-  display: inline-grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto auto;
-  padding: 10px;
-  border: 2px solid #67ff78;
+  border: 5px dashed #67ff78;
   color: white;
+  font-size: 2vw;
   font-family: monospace;
-  font-size: 18px;
-  padding-left: 15px;
-  padding-right: 15px;
   background: #132300;
 }
 
-.textbox {
-  color: white;
-  font-family: monospace;
-  font-size: 18px;
-  padding-left: 5px;
+td {
+  padding: .5vw 1vw;
+}
+
+.pct-cell {
+  text-align: right;
+  font-family: 'Courier New', monospace
 }
