@@ -2,7 +2,6 @@
     require_once("../include/const.php");
     $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
 
-    $STATIC_TS_CHART_HEIGHT = 200;
     $PIE_CHART_VH = 70;
 
     $pie_chart = [
@@ -116,20 +115,6 @@
                         background: ".$pie_chart['Other']['color'].";
                         border: 3px solid white;
                     }
-					.timeseries-container {
-                        display: flex;
-                        background: black;
-                        border: 2px solid white;
-                        height: ".$STATIC_TS_CHART_HEIGHT."px;
-                        margin: 20px;
-                        align-items: flex-end;
-                        gap: 5px;
-                        padding: 0px 5px 5px 5px;
-                    }
-					.ts-point {
-                        flex-grow: 1;
-						background: white;
-					}
                 </style>
                 <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
             </head>
@@ -170,39 +155,41 @@
                 </div>
                 <br><br><br><br><br>
                 <h2>Visitor Access Logs</h2>
-                <div class='timeseries-container'>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>
-                    <div class='ts-point' style='height: 150px'></div>
-                    <div class='ts-point' style='height: 50px'></div>
-                    <div class='ts-point' style='height: 40px'></div>   
-                </div>
-                <div class='ts-dates'>
-                    <p>xx/xx/xxxx</p>
-                    <p>xx/xx/xxxx</p>
-                    <p>xx/xx/xxxx</p>
+                <div class='access-logs-container'>
+                    <div class='timeseries-container'>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>
+                        <div class='ts-point' style='height: 150px'></div>
+                        <div class='ts-point' style='height: 50px'></div>
+                        <div class='ts-point' style='height: 40px'></div>   
+                    </div>
+                    <div class='ts-dates'>
+                        <p>xx/xx/xxxx</p>
+                        <p>xx/xx/xxxx</p>
+                        <p>xx/xx/xxxx</p>
+                    </div>
                 </div>
             </main>
         </html>

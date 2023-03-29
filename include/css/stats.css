@@ -50,3 +50,28 @@ td {
   text-align: right;
   font-family: 'Courier New', monospace
 }
+
+.access-logs-container {
+  display: flex;
+}
+
+.timeseries-container {
+  display: flex;
+  background: black;
+  border: 2px solid white;
+  height: 200px;
+  margin: 20px;
+  align-items: flex-end;
+  gap: 5px;
+  padding: 0px 5px 5px 5px;
+}
+
+.ts-point {
+  flex-grow: 1;
+background: white;
+}
+
+.ts-dates {
+  justify-content: space-between;
+}
+
