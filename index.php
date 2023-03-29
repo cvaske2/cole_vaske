@@ -1,6 +1,7 @@
 <?php
 	require_once("./include/const.php");
 	require_once("./include/callbacks.php");
+	require_once("./include/logging.php");
 
 	$agent = null;
 
