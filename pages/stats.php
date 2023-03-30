@@ -183,12 +183,12 @@
                         <div class='ts-point' style='height: 40px'></div>
                         <div class='ts-point' style='height: 150px'></div>
                         <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>   
+                        <div class='ts-point' style='height: 40px'></div>
                     </div>
                     <div class='ts-dates'>
                         <p>xx/xx/xxxx</p>
                         <p>xx/xx/xxxx</p>
-                        <p>xx/xx/xxxx</p>
+                        <p style='float: right;'>xx/xx/xxxx</p>
                     </div>
                 </div>
             </main>

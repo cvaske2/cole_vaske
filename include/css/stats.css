@@ -1,7 +1,7 @@
 .pie-container {
   display: flex;
   justify-content: center;
-  padding-top: 5vh;
+  padding-top: 3vh;
 }
 
 h2 {
@@ -52,26 +52,31 @@ td {
 }
 
 .access-logs-container {
-  display: flex;
+  display: inline-block;
+  width: 100%;
+  padding-top: 3vh;
 }
 
 .timeseries-container {
   display: flex;
   background: black;
   border: 2px solid white;
-  height: 200px;
-  margin: 20px;
+  width: 95%;
+  height: 200px; /* this will eventually be changed in the HTML file */
+  margin: auto;
   align-items: flex-end;
-  gap: 5px;
-  padding: 0px 5px 5px 5px;
+  gap: 2px;
+  padding: 3px 3px 3px 3px;
 }
 
 .ts-point {
   flex-grow: 1;
-background: white;
+  background: white;
 }
 
 .ts-dates {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
   justify-content: space-between;
 }
-
