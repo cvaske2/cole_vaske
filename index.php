@@ -71,4 +71,76 @@
 	
 	// Save user agent to file for statistics purposes
 	logVisit($agent);
+
+	$agent_file_contents = file_get_contents("logs/user_agents.tsv");
+    $agent_file_contents = explode("\n", $agent_file_contents);
+	
+	logLine(json_encode($agent_file_contents));
+
+	$data = [
+        "Chrome" => [
+            "color" => "Red",
+            "amt" => 0,
+            "pct" => "100%",
+            "actual_pct" => 0
+        ],
+        "Firefox" => [
+            "color" => "Orange",
+            "amt" => 0,
+            "pct" => "0%",
+            "actual_pct" => 0
+        ],
+        "Edge" => [
+            "color" => "Blue",
+            "amt" => 0,
+            "pct" => "0%",
+            "actual_pct" => 0
+        ],
+        "Other" => [
+            "color" => "Purple",
+            "amt" => 0,
+            "pct" => "0%",
+            "actual_pct" => 0
+        ]
+    ];
+
+	foreach($agent_file_contents as &$line) {
+        $line_content = explode("\t", $line); // [0] is agent, [1] is timestamp
+        $line = $line_content; // Rebuild $agent_file_contents in place
+
+        if($line[1] === null) {
+            /* An empty line has been found. Continue to the next */
+            continue;
+        }
+        $total_agents++;
+
+        /* Isolate the user agent information */
+        $agent = $line[0];
+        $agent = substr($agent, strrpos($agent, "Gecko"));
+        $agent = substr($agent, strpos($agent, " "));
+        $agent = substr($agent, 0, strrpos($agent, "/"));
+
+        /* Start looking at the remainder of the agent */
+        if (strpos($agent, "Firefox") !== false) {
+            $data["Firefox"]["amt"]++;
+        } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Safari") + strlen("Safari") === strlen($agent)) {
+            $data["Chrome"]["amt"]++;
+        } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Edg") !== false) {
+            $data["Edge"]{"amt"}++;
+        } else {
+            $data["Other"]["amt"]++;
+        }
+
+		/* Because of the way I have implemented the pie chart in CSS, 
+        We need to add the percentage of the previous pie slices to the subsequent percentages */
+		$pct_sum = 0;
+		foreach($data as &$dot) {
+			$pct = ($dot["amt"] * 100 / $total_agents);
+			$pct_sum += $pct;
+			$dot["pct"] = $pct_sum."%";
+			$dot["actual_pct"] = round($pct);
+		}
+    }
+
+	file_put_contents("logs/data/user_agent_calc.json", json_encode($data, JSON_PRETTY_PRINT));
 ?>
