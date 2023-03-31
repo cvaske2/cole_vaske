@@ -124,6 +124,7 @@
             <main>
                 <h2 style='margin: none;'>Browser Access Statistics</h2>
                 <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated.</p>
+                <p>Everything was done using HTML and CSS, preprocessed with PHP. No Javascript was used whatsoever on this page.
                 <p><b><u>This page is not intended to be practical</u></b>--a better method for generating these visualizations would be to use a JS library or some kind of backend image generation process. The point was to improve my HTML and CSS skills as well as use PHP in a fun way.</p>
                 <h2>Visitor Browser Distribution</h2>
                 <div class='pie-container'>
