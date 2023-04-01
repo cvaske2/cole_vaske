@@ -75,8 +75,6 @@
 	$agent_file_contents = file_get_contents("logs/user_agents.tsv");
     $agent_file_contents = explode("\n", $agent_file_contents);
 	
-	logLine(json_encode($agent_file_contents));
-
 	$data = [
         "Chrome" => [
             "color" => "Red",
