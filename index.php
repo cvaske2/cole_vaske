@@ -66,9 +66,7 @@
 	</footer>
 </html>
 
-<?php
-	echo $html_string;
-	
+<?php	
 	// Save user agent to file for statistics purposes
 	logVisit($agent);
 
