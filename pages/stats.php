@@ -4,6 +4,7 @@
     $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
 
     $PIE_CHART_VH = 70;
+    $TS_CHART_HEIGHT = 300;
 
     $pie_chart = json_decode(file_get_contents("../logs/data/user_agent_calc.json"), true);
     
@@ -48,6 +49,17 @@
                         background: ".$pie_chart['Other']['color'].";
                         border: 3px solid white;
                     }
+                    .timeseries-container {
+                        display: flex;
+                        background: black;
+                        border: 2px solid white;
+                        width: 95%;
+                        height: 200px; /* this will eventually be changed in the HTML file */
+                        margin: auto;
+                        align-items: flex-end;
+                        gap: 2px;
+                        padding: 3px 3px 3px 3px;
+                      }
                 </style>
                 <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
             </head>

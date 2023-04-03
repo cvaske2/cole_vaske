@@ -105,18 +105,18 @@
         $line = $line_content; // Rebuild $agent_file_contents in place
 
         if($line[1] === null) {
-            /* An empty line has been found. Continue to the next */
+            // An empty line has been found. Continue to the next
             continue;
         }
         $total_agents++;
 
-        /* Isolate the user agent information */
+        // Isolate the user agent information
         $agent = $line[0];
         $agent = substr($agent, strrpos($agent, "Gecko"));
         $agent = substr($agent, strpos($agent, " "));
         $agent = substr($agent, 0, strrpos($agent, "/"));
 
-        /* Start looking at the remainder of the agent */
+        // Start looking at the remainder of the agent
         if (strpos($agent, "Firefox") !== false) {
             $data["Firefox"]["amt"]++;
         } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Safari") + strlen("Safari") === strlen($agent)) {
@@ -126,17 +126,47 @@
         } else {
             $data["Other"]["amt"]++;
         }
-
-		/* Because of the way I have implemented the pie chart in CSS, 
-        We need to add the percentage of the previous pie slices to the subsequent percentages */
-		$pct_sum = 0;
-		foreach($data as &$dot) {
-			$pct = ($dot["amt"] * 100 / $total_agents);
-			$pct_sum += $pct;
-			$dot["pct"] = $pct_sum."%";
-			$dot["actual_pct"] = round($pct);
-		}
     }
-
+	/* Because of the way I have implemented the pie chart in CSS, 
+	We need to add the percentage of the previous pie slices to the subsequent percentages */
+	$pct_sum = 0;
+	foreach($data as &$dot) {
+		$pct = ($dot["amt"] * 100 / $total_agents);
+		$pct_sum += $pct;
+		$dot["pct"] = $pct_sum."%";
+		$dot["actual_pct"] = round($pct);
+	}
 	file_put_contents("logs/data/user_agent_calc.json", json_encode($data, JSON_PRETTY_PRINT));
+
+	// Update logs/data/timeseries_data.json
+	$visit_high = 0;
+	$initial_dates_index = strtok($agent_file_contents[0][1], " ");
+
+	$dates[$initial_dates_index] = 1;
+	$last_dates_index = $initial_dates_index;
+
+	foreach($agent_file_contents as $line) {
+		$current_date = strtok($line[1], " ");
+
+		if ($current_date == $last_date_index) {
+			$dates[$last_date_index]++;
+		} else {
+			if($dates[$last_date_index] > $visit_high) {
+				$visit_high = $dates[$last_date_index];
+			}
+			$last_date_index = $current_date;
+			$dates[$current_date] = 1;
+		}
+	}
+	logLine(json_encode($agent_file_contents, JSON_PRETTY_PRINT));
+
+	$keys = array_keys($dates);
+	$ts_data = [
+		"first_date" => $keys[0],
+		"mid_date" => $keys[intval((count($keys) - 1) / 2)][1],
+		"last_date" => $keys[count($keys) - 1],
+		"most_visits" => $visit_high,
+		"data" => $dates
+	];
+	file_put_contents("logs/data/timeseries_data.json", json_encode($ts_data, JSON_PRETTY_PRINT));
 ?>
