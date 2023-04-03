@@ -108,7 +108,7 @@
             // An empty line has been found. Continue to the next
             continue;
         }
-        $total_agents++;
+        ++$total_agents;
 
         // Isolate the user agent information
         $agent = $line[0];
@@ -118,15 +118,18 @@
 
         // Start looking at the remainder of the agent
         if (strpos($agent, "Firefox") !== false) {
-            $data["Firefox"]["amt"]++;
+            ++$data["Firefox"]["amt"];
         } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Safari") + strlen("Safari") === strlen($agent)) {
-            $data["Chrome"]["amt"]++;
+            ++$data["Chrome"]["amt"];
         } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Edg") !== false) {
-            $data["Edge"]{"amt"}++;
+            ++$data["Edge"]{"amt"};
         } else {
-            $data["Other"]["amt"]++;
+            ++$data["Other"]["amt"];
         }
     }
+	// Since there is a newline at the end of the file, this loop will have a duplicate for the last saved agent. Remove it.
+	array_pop($agent_file_contents);
+
 	/* Because of the way I have implemented the pie chart in CSS, 
 	We need to add the percentage of the previous pie slices to the subsequent percentages */
 	$pct_sum = 0;
@@ -149,7 +152,7 @@
 		$current_date = strtok($line[1], " ");
 
 		if ($current_date == $last_date_index) {
-			$dates[$last_date_index]++;
+			++$dates[$last_date_index];
 		} else {
 			if($dates[$last_date_index] > $visit_high) {
 				$visit_high = $dates[$last_date_index];
@@ -158,7 +161,6 @@
 			$dates[$current_date] = 1;
 		}
 	}
-	logLine($agent_file_contents, true);
 
 	$keys = array_keys($dates);
 	$ts_data = [
