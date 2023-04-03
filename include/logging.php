@@ -9,9 +9,18 @@
         return $upper_lower."\n".$date."\n".$upper_lower;
     }
 
-    function logLine($str) {
-        $fp = fopen(LOGFILE, 'a');
-        $input = buildDateHeader()."\n".$str."\n\n\n\n\n";
+    function logLine($str, $overwrite = false) {
+        if (is_array($str)) {
+            $str = json_encode($str, JSON_PRETTY_PRINT);
+        }
+        $fp = null;
+        if ($overwrite) {
+            $fp = fopen(LOGFILE, 'w');
+        } else {
+            $fp = fopen(LOGFILE, 'a');
+        }
+        $input = buildDateHeader()."\n".$str."\n";
+
         fwrite($fp, $input);
         fclose($fp);
     }

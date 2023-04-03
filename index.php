@@ -158,7 +158,7 @@
 			$dates[$current_date] = 1;
 		}
 	}
-	logLine(json_encode($agent_file_contents, JSON_PRETTY_PRINT));
+	logLine($agent_file_contents, true);
 
 	$keys = array_keys($dates);
 	$ts_data = [
