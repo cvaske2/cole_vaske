@@ -105,7 +105,7 @@
                 <div class='access-logs-container'>
                     <div class='timeseries-container'>";
 
-                        foreach ($ts_chart["data"] as $date_key => $visit_count) {
+                        foreach ($ts_chart["data"] as $visit_count) {
                             $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
                             $html_string .= "<div class='ts-point' style='height: ".$height."px'></div>";
                         }
