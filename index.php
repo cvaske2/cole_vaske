@@ -165,7 +165,7 @@
 	$keys = array_keys($dates);
 	$ts_data = [
 		"first_date" => $keys[0],
-		"mid_date" => $keys[intval((count($keys) - 1) / 2)][1],
+		"mid_date" => $keys[intval((count($keys) - 1) / 2)],
 		"last_date" => $keys[count($keys) - 1],
 		"most_visits" => $visit_high,
 		"data" => $dates

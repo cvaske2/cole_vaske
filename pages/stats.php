@@ -7,6 +7,7 @@
     $TS_CHART_HEIGHT = 300;
 
     $pie_chart = json_decode(file_get_contents("../logs/data/user_agent_calc.json"), true);
+    $ts_chart = json_decode(file_get_contents("../logs/data/timeseries_data.json"), true);
     
     $html_string = "
         <html>
@@ -54,7 +55,7 @@
                         background: black;
                         border: 2px solid white;
                         width: 95%;
-                        height: 200px; /* this will eventually be changed in the HTML file */
+                        height: ".$TS_CHART_HEIGHT."px; /* this will eventually be changed in the HTML file */
                         margin: auto;
                         align-items: flex-end;
                         gap: 2px;
@@ -102,39 +103,19 @@
                 <br><br><br><br><br>
                 <h2>Visitor Access Logs</h2>
                 <div class='access-logs-container'>
-                    <div class='timeseries-container'>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                        <div class='ts-point' style='height: 150px'></div>
-                        <div class='ts-point' style='height: 50px'></div>
-                        <div class='ts-point' style='height: 40px'></div>
-                    </div>
+                    <div class='timeseries-container'>";
+
+                        foreach ($ts_chart["data"] as $date_key => $visit_count) {
+                            $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
+                            $html_string .= "<div class='ts-point' style='height: ".$height."px'></div>";
+                        }
+
+                    $html_string .= "
+                        </div>
                     <div class='ts-dates'>
-                        <p>xx/xx/xxxx</p>
-                        <p>xx/xx/xxxx</p>
-                        <p style='float: right;'>xx/xx/xxxx</p>
+                        <p>".$ts_chart["first_date"]."</p>
+                        <p>".$ts_chart["mid_date"]."</p>
+                        <p style='float: right;'>".$ts_chart["last_date"]."</p>
                     </div>
                 </div>
             </main>
