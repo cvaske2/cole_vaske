@@ -166,7 +166,8 @@
 
 			// Will not run if $date_difference is 1
 			for($i = 1; $i < $date_difference; ++$i) {
-				$new_date = date_add($from, new DateInterval('P1D'))->format('m-d-Y');
+				// $from is passed by reference and is operated on by the function, so it is incremented by 1 day.
+				$new_date = date_add($from, new DateInterval('P1D'))->format('m-d-Y'); 
 				$dates[$new_date] = 0;
 			}
 			if($dates[$last_date_index] > $visit_high) {
