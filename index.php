@@ -99,6 +99,7 @@
             "actual_pct" => 0
         ]
     ];
+	$total_agents = 0;
 
 	foreach($agent_file_contents as &$line) {
         $line_content = explode("\t", $line); // [0] is agent, [1] is timestamp
@@ -146,14 +147,28 @@
 	$initial_dates_index = strtok($agent_file_contents[0][1], " ");
 
 	$dates[$initial_dates_index] = 1;
-	$last_dates_index = $initial_dates_index;
+	$last_date_index = $initial_dates_index;
 
+	/* Need to build timeseries-style JSON data. 
+		The given data '$agent_file_contents' is sorted chronologically, so no sorting is necessary.
+		This loop accomplish do two things:
+			1. Counts the number of instances for each date then puts them into an associative array as "date => num_instances", and
+			2. Fills the space between dates (e.g., if no one accessed my site between 01/01/2023 and 01/05/2023) with "date => 0". */
 	foreach($agent_file_contents as $line) {
 		$current_date = strtok($line[1], " ");
 
 		if ($current_date == $last_date_index) {
 			++$dates[$last_date_index];
 		} else {
+			$from = DateTime::createFromFormat("m-d-Y", $last_date_index); // this will be less than $current_date
+			$to = DateTime::createFromFormat("m-d-Y", $current_date); // this will be greater than $last_date_index
+			$date_difference = date_diff($from, $to)->days;
+
+			// Will not run if $date_difference is 1
+			for($i = 1; $i < $date_difference; ++$i) {
+				$new_date = date_add($from, new DateInterval('P1D'))->format('m-d-Y');
+				$dates[$new_date] = 0;
+			}
 			if($dates[$last_date_index] > $visit_high) {
 				$visit_high = $dates[$last_date_index];
 			}
