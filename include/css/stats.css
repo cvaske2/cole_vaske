@@ -52,9 +52,15 @@ td {
 }
 
 .access-logs-container {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: .1fr auto;
   width: 100%;
   padding-top: 3vh;
+}
+
+.ts-y-labels {
+  display: grid;
+  text-align: right;
 }
 
 .ts-point {
