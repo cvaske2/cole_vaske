@@ -160,8 +160,8 @@
 		if ($current_date == $last_date_index) {
 			++$dates[$last_date_index];
 		} else {
-			$from = DateTime::createFromFormat("m-d-Y", $last_date_index); // this will be less than $current_date
-			$to = DateTime::createFromFormat("m-d-Y", $current_date); // this will be greater than $last_date_index
+			$from = DateTime::createFromFormat("m-d-Y", $last_date_index); // This will be less than $current_date
+			$to = DateTime::createFromFormat("m-d-Y", $current_date); // This will be greater than $last_date_index
 			$date_difference = date_diff($from, $to)->days;
 
 			// Will not run if $date_difference is 1
