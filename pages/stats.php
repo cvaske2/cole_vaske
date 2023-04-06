@@ -106,23 +106,26 @@
                 <div class='access-logs-container'>
                     <div class='ts-y-labels'>
                         <span>".$ts_chart["most_visits"]." visits -</span>
-                        <span style='justify-content: center;'>".intval($ts_chart["most_visits"]/2)." visits -</span>
+                        <span>".intval($ts_chart["most_visits"]/2)." visits -</span>
                     </div>
-                    <div class='ts-dates-wrapper'>
-                        <div class='timeseries-container'>";
+                    <div class='timeseries-container'>";
 
-                            foreach ($ts_chart["data"] as $visit_count) {
-                                $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
-                                $html_string .= "<div class='ts-point' style='height: ".$height."px'></div>";
-                            }
-
+                        foreach ($ts_chart["data"] as $visit_count) {
+                            $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
                             $html_string .= "
-                        </div>
-                        <div class='ts-dates'>
-                            <p>".$ts_chart["first_date"]."</p>
-                            <p>".$ts_chart["mid_date"]."</p>
-                            <p style='float: right;'>".$ts_chart["last_date"]."</p>
-                        </div>
+                                <div class='ts-point' style='height: ".$height."px'>
+                                    <div class='ts-point-tooltip'></div>
+                                </div>";
+                        }
+
+                        $html_string .= "
+                    </div>
+                    <div>
+                    </div>
+                    <div class='ts-dates'>
+                        <span>".$ts_chart["first_date"]."</span>
+                        <span>".$ts_chart["mid_date"]."</span>
+                        <span style='float: right;'>".$ts_chart["last_date"]."</span>
                     </div>
                 </div>
             </main>
