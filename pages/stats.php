@@ -52,6 +52,7 @@
                     }
                     .timeseries-container {
                         display: flex;
+                        position: relative;
                         background: black;
                         border: 2px solid white;
                         width: 98%;
@@ -105,10 +106,20 @@
                 <h2>Visitor Access Logs</h2>
                 <div class='access-logs-container'>
                     <div class='ts-y-labels'>
-                        <span>".$ts_chart["most_visits"]." visits -</span>
-                        <span>".intval($ts_chart["most_visits"]/2)." visits -</span>
+                        <span>".$ts_chart["most_visits"]." visits</span>
+                        <span>".intval($ts_chart["most_visits"]/2)." visits</span>
                     </div>
-                    <div class='timeseries-container'>";
+                    <div class='timeseries-container'>
+                        <div class='y-bg-line-1'></div>
+                        <div class='y-bg-line-2'></div>
+                        <div class='y-bg-line-3'></div>
+                        <div class='x-bg-line-1'></div>
+                        <div class='x-bg-line-2'></div>
+                        <div class='x-bg-line-3'></div>
+                        <div class='x-bg-line-4'></div>
+                        <div class='x-bg-line-5'></div>
+                        <div class='x-bg-line-6'></div>
+                        <div class='x-bg-line-7'></div>";
 
                         foreach ($ts_chart["data"] as $visit_count) {
                             $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
