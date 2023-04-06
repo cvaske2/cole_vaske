@@ -54,12 +54,13 @@
                         display: flex;
                         background: black;
                         border: 2px solid white;
-                        width: 95%;
+                        width: 98%;
                         height: ".$TS_CHART_HEIGHT."px; /* this will eventually be changed in the HTML file */
-                        margin: auto;
+                        margin-right: auto;
+                        margin-top: 12px;
                         align-items: flex-end;
                         gap: 2px;
-                        padding: 3px 3px 3px 3px;
+                        padding: 2px 2px 2px 2px;
                       }
                 </style>
                 <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
@@ -103,19 +104,28 @@
                 <br><br><br><br><br>
                 <h2>Visitor Access Logs</h2>
                 <div class='access-logs-container'>
+                    <div class='ts-y-labels'>
+                        <span>".$ts_chart["most_visits"]." visits -</span>
+                        <span>".intval($ts_chart["most_visits"]/2)." visits -</span>
+                    </div>
                     <div class='timeseries-container'>";
 
                         foreach ($ts_chart["data"] as $visit_count) {
                             $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
-                            $html_string .= "<div class='ts-point' style='height: ".$height."px'></div>";
+                            $html_string .= "
+                                <div class='ts-point' style='height: ".$height."px'>
+                                    <div class='ts-point-tooltip'></div>
+                                </div>";
                         }
 
-                    $html_string .= "
-                        </div>
+                        $html_string .= "
+                    </div>
+                    <div>
+                    </div>
                     <div class='ts-dates'>
-                        <p>".$ts_chart["first_date"]."</p>
-                        <p>".$ts_chart["mid_date"]."</p>
-                        <p style='float: right;'>".$ts_chart["last_date"]."</p>
+                        <span>".$ts_chart["first_date"]."</span>
+                        <span>".$ts_chart["mid_date"]."</span>
+                        <span style='float: right;'>".$ts_chart["last_date"]."</span>
                     </div>
                 </div>
             </main>
