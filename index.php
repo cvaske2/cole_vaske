@@ -70,6 +70,24 @@
 	// Save user agent to file for statistics purposes
 	logVisit($agent);
 
+	function getBrowserFromUserAgent($user_agent) {
+
+		// Starting isolating the user agent information
+		$user_agent = substr($user_agent, strrpos($user_agent, "Gecko"));
+        $user_agent = substr($user_agent, strpos($user_agent, " "));
+        $user_agent = substr($user_agent, 0, strrpos($user_agent, "/"));
+		
+        // Start looking at the remainder of the agent
+        if (strpos($user_agent, "Firefox") !== false) {
+			return "Firefox";
+        } else if (strpos($user_agent, "Chrome") !== false && strpos($user_agent, "Safari") + strlen("Safari") === strlen($user_agent)) {
+			return "Chrome";
+        } else if (strpos($user_agent, "Chrome") !== false && strpos($user_agent, "Edg") !== false) {
+			return "Edge";
+		}
+		return "Other";
+	}
+
 	$agent_file_contents = file_get_contents("logs/user_agents.tsv");
     $agent_file_contents = explode("\n", $agent_file_contents);
 	
@@ -113,21 +131,8 @@
         ++$total_agents;
 		
         // Isolate the user agent information
-        $agent = $line[0];
-        $agent = substr($agent, strrpos($agent, "Gecko"));
-        $agent = substr($agent, strpos($agent, " "));
-        $agent = substr($agent, 0, strrpos($agent, "/"));
-		
-        // Start looking at the remainder of the agent
-        if (strpos($agent, "Firefox") !== false) {
-			++$data["Firefox"]["amt"];
-        } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Safari") + strlen("Safari") === strlen($agent)) {
-			++$data["Chrome"]["amt"];
-        } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Edg") !== false) {
-			++$data["Edge"]{"amt"};
-        } else {
-			++$data["Other"]["amt"];
-        }
+		$line[0] = getBrowserFromUserAgent($line[0]);
+		++$data[$line[0]]["amt"];
     }
 
 	/* Because of the way I have implemented the pie chart in CSS, 
@@ -145,19 +150,21 @@
 	$visit_high = 0;
 	$initial_dates_index = strtok($agent_file_contents[0][1], " ");
 
-	$dates[$initial_dates_index] = 1;
+	$dates[$initial_dates_index]["total"] = 1;
+	$dates[$initial_dates_index][$agent_file_contents[0][0]] = 1;
 	$last_date_index = $initial_dates_index;
 
 	/* Need to build timeseries-style JSON data.
 		The given data '$agent_file_contents' is sorted chronologically, so no sorting is necessary.
 		This loop accomplish do two things:
-			1. Counts the number of instances for each date then puts them into an associative array as "date => num_instances", and
-			2. Fills the space between dates (e.g., if no one accessed my site between 01/01/2023 and 01/05/2023) with "date => 0". */
-	foreach($agent_file_contents as $line) {
+			1. Counts the number of instances for each date then puts them into an associative array as "date => { total: num_instances, browser1 :..., browser2: ...,}", and
+			2. Fills the space between dates (e.g., if no one accessed my site between 01/01/2023 and 01/05/2023) with "date => { total: 0 }". */
+	foreach(array_slice($agent_file_contents, 1) as $line) {
 		$current_date = strtok($line[1], " ");
-
+		
 		if ($current_date == $last_date_index) {
-			++$dates[$last_date_index];
+			++$dates[$last_date_index]["total"];
+			++$dates[$last_date_index][$line[0]];
 		} else {
 			$from = DateTime::createFromFormat("m-d-Y", $last_date_index); // This will be less than $current_date
 			$to = DateTime::createFromFormat("m-d-Y", $current_date); // This will be greater than $last_date_index
@@ -167,13 +174,15 @@
 			for($i = 1; $i < $date_difference; ++$i) {
 				// $from is passed by reference and is operated on by the function, so it is incremented by 1 day.
 				$new_date = date_add($from, new DateInterval('P1D'))->format('m-d-Y'); 
-				$dates[$new_date] = 0;
+				$dates[$new_date]["total"] = 0;
 			}
-			if($dates[$last_date_index] > $visit_high) {
-				$visit_high = $dates[$last_date_index];
+			if($dates[$last_date_index]["total"] > $visit_high) {
+				$visit_high = $dates[$last_date_index]["total"];
 			}
 			$last_date_index = $current_date;
-			$dates[$current_date] = 1;
+
+			$dates[$current_date]["total"] = 1;
+			$dates[$current_date][$line[0]] = 1;
 		}
 	}
 

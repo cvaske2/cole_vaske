@@ -25,7 +25,7 @@ h3 {
 }
 
 
-.legend-ext{
+.legend-ext {
   display: flex;
   height: min-content;
   margin: 50px;
@@ -99,12 +99,38 @@ h3 {
   visibility: hidden;
   width: auto;
   height: auto;
-  transform: translateY(-120%);
+  transform: translateY(-100%);
   padding: 5px;
   background: black;
   outline: 2px solid black;
   border: 2px solid white;
   z-index: 1;
+}
+
+.tooltip-content-wrapper {
+  display: flex;
+}
+
+.tooltip-point-pie-chart {
+  margin: auto .5em auto .5em;
+  width: 7em;
+  height: 7em;
+  border-radius: 7em;
+}
+
+h4 {
+  text-align: center;
+  font-size: 2vw;
+}
+
+.tooltip-browser-info {
+  color: white;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.tooltip-browser-info th {
+  text-align: left;
 }
 
 .ts-point:hover {

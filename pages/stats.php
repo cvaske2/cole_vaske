@@ -27,28 +27,28 @@
                         border-radius: ".$PIE_CHART_VH."vh;
                     }
                     .chrome-box {
-                        width: 2vw;
-                        height: 2vw;
+                        width: 1em;
+                        height: 1em;
                         background: ".$pie_chart['Chrome']['color'].";
-                        border: 3px solid white;
+                        border: .1em solid white;
                     }
                     .firefox-box {
-                        width: 2vw;
-                        height: 2vw;
+                        width: 1em;
+                        height: 1em;
                         background: ".$pie_chart['Firefox']['color'].";
-                        border: 3px solid white;
+                        border: .1em solid white;
                     }
                     .edge-box {
-                        width: 2vw;
-                        height: 2vw;
+                        width: 1em;
+                        height: 1em;
                         background: ".$pie_chart['Edge']['color'].";
-                        border: 3px solid white;
+                        border: .1em solid white;
                     }
                     .other-box {
-                        width: 2vw;
-                        height: 2vw;
+                        width: 1em;
+                        height: 1em;
                         background: ".$pie_chart['Other']['color'].";
-                        border: 3px solid white;
+                        border: .1em solid white;
                     }
                     .timeseries-container {
                         display: flex;
@@ -120,23 +120,76 @@
                         <span>".intval($ts_chart["most_visits"]/2)." visits</span>
                     </div>
                     <div class='timeseries-container'>";
-                        // y-axis gridlines
+                        /* y-axis gridlines
+                            The number of these is static so this isn't 100% necessary but I like to reduce my lines of code*/
                         $NUM_Y_GRIDLINES = 4;
                         for($i = 1; $i < $NUM_Y_GRIDLINES; ++$i) {
                             $html_string .= "<div class='y-bg-line' style='top: ".($i * 100 / $NUM_Y_GRIDLINES)."%;'></div>";
                         }
 
-                        // x-axis gridlines
+                        /* x-axis gridlines
+                            The number of these is static so this isn't 100% necessary but I like to reduce my lines of code*/
                         $NUM_X_GRIDLINES = 8;
                         for($i = 1; $i < $NUM_X_GRIDLINES; ++$i) {
                             $html_string .= "<div class='x-bg-line' style='left: ".($i * 100 / $NUM_X_GRIDLINES)."%;'></div>";
                         }
 
-                        foreach ($ts_chart["data"] as $visit_date => $visit_count) {
-                            $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
+                        // Place each bar in the timeseries chart
+                        foreach ($ts_chart["data"] as $visit_date => $visit_count_obj) {
+                            $height = intval(($visit_count_obj["total"] / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
                             $html_string .= "
                                 <div class='ts-point' style='height: ".$height."px'>
-                                    <div class='ts-point-tooltip'>$visit_date</div>
+                                    <div class='ts-point-tooltip'>
+                                        <h4>".DateTime::createFromFormat("m-d-Y", $visit_date)->format("F j, Y")."</h4>
+                                        <div class='tooltip-content-wrapper'>
+                                            <div class='tooltip-point-pie-chart' style='background: conic-gradient(";
+
+                            // Generate and place conic-gradient parameters
+                            $pct_accumulation = 0;
+                            foreach ($visit_count_obj as $browser => $browser_count) {
+                                if ($browser == "total") {
+                                    // Completely skip this so the pie chart remains unaffected
+                                    continue;
+                                }
+                                $pct_accumulation += $browser_count * 100 / $visit_count_obj["total"];
+                                $html_string .= $pie_chart[$browser]['color']." 0% ".$pct_accumulation."%, ";
+                            }
+
+                            // Remove last two characters before continuing (will strip the substring ", ")
+                            $html_string = substr($html_string, 0, -2);
+                            $html_string .= "
+                                            );'></div>
+                                            <table class='tooltip-browser-info'>
+                                                <tr>
+                                                    <th>
+                                                    <th><u>Browser</u></th>
+                                                    <th><u>Ct.</u></th>
+                                                </tr>";
+
+                            // Generate table row for each browser for that day
+                            $total_count = null;
+                            foreach ($visit_count_obj as $browser => $browser_count) {
+                                // This case is handled later, but we need the count for that time.
+                                if ($browser == "total") {
+                                    $total_count = $browser_count;
+                                } else {
+                                    $html_string .= "
+                                                <tr>
+                                                    <td><div class='".strtolower($browser)."-box'></td>
+                                                    <td>$browser:</td>
+                                                    <td>$browser_count</td>
+                                                </tr>";
+                                }
+                            }
+                            $html_string .="
+                                                <tr>
+                                                    <td></td>
+                                                    <td><b>Total<b>:</td>
+                                                    <td><b>$total_count<b></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>";
                         }
 
