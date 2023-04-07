@@ -102,34 +102,34 @@
 	$total_agents = 0;
 
 	foreach($agent_file_contents as &$line) {
-        $line_content = explode("\t", $line); // [0] is agent, [1] is timestamp
+		$line_content = explode("\t", $line); // [0] is agent, [1] is timestamp
         $line = $line_content; // Rebuild $agent_file_contents in place
-
+		
         if($line[1] === null) {
-            // An empty line has been found. Continue to the next
+			// An empty line has been found. Continue to the next
+			// array_pop($agent_file_contents);
             continue;
         }
         ++$total_agents;
-
+		
         // Isolate the user agent information
         $agent = $line[0];
-        $agent = substr($agent, strrpos($agent, "Gecko"));
-        $agent = substr($agent, strpos($agent, " "));
-        $agent = substr($agent, 0, strrpos($agent, "/"));
-
+        // $agent = substr($agent, strrpos($agent, "Gecko"));
+        // $agent = substr($agent, strpos($agent, " "));
+        // $agent = substr($agent, 0, strrpos($agent, "/"));
+		
         // Start looking at the remainder of the agent
         if (strpos($agent, "Firefox") !== false) {
-            ++$data["Firefox"]["amt"];
+			++$data["Firefox"]["amt"];
         } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Safari") + strlen("Safari") === strlen($agent)) {
-            ++$data["Chrome"]["amt"];
+			++$data["Chrome"]["amt"];
         } else if (strpos($agent, "Chrome") !== false && strpos($agent, "Edg") !== false) {
-            ++$data["Edge"]{"amt"};
+			++$data["Edge"]{"amt"};
         } else {
-            ++$data["Other"]["amt"];
+			++$data["Other"]["amt"];
         }
     }
 	// Since there is a newline at the end of the file, this loop will have a duplicate for the last saved agent. Remove it.
-	array_pop($agent_file_contents);
 
 	/* Because of the way I have implemented the pie chart in CSS, 
 	We need to add the percentage of the previous pie slices to the subsequent percentages */
@@ -148,6 +148,7 @@
 
 	$dates[$initial_dates_index] = 1;
 	$last_date_index = $initial_dates_index;
+	logLine($agent_file_contents);
 
 	/* Need to build timeseries-style JSON data. 
 		The given data '$agent_file_contents' is sorted chronologically, so no sorting is necessary.
@@ -155,6 +156,7 @@
 			1. Counts the number of instances for each date then puts them into an associative array as "date => num_instances", and
 			2. Fills the space between dates (e.g., if no one accessed my site between 01/01/2023 and 01/05/2023) with "date => 0". */
 	foreach($agent_file_contents as $line) {
+		// logLine(array_slice($agent_file_contents, -1));
 		$current_date = strtok($line[1], " ");
 
 		if ($current_date == $last_date_index) {

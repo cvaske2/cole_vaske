@@ -5,7 +5,7 @@
     
     function logVisit($agent) {
         // <User agent>    YYYY-mm-dd hh:mm:ss
-        $input_string = "<".$agent.">\t".date("m-d-Y")." ".date("H:i:s")."\n";
+        $input_string = "\n<".$agent.">\t".date("m-d-Y")." ".date("H:i:s");
 
         $fp = fopen(USER_AGENTS_FILE, 'a');
         fwrite($fp, $input_string);

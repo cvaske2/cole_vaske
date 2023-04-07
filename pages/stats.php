@@ -132,11 +132,11 @@
                             $html_string .= "<div class='x-bg-line' style='left: ".($i * 100 / $NUM_X_GRIDLINES)."%;'></div>";
                         }
 
-                        foreach ($ts_chart["data"] as $visit_count) {
+                        foreach ($ts_chart["data"] as $visit_date => $visit_count) {
                             $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
                             $html_string .= "
                                 <div class='ts-point' style='height: ".$height."px'>
-                                    <div class='ts-point-tooltip'></div>
+                                    <div class='ts-point-tooltip'>$visit_date</div>
                                 </div>";
                         }
 

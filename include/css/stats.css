@@ -88,15 +88,23 @@ h3 {
 
 .ts-point {
   display: flex;
+  position: relative; /* This is needed to fix the z-index for some reason */
   flex-grow: 1;
   background: white;
-  z-index: 1;
+  justify-content: center;
 }
 
 .ts-point-tooltip {
+  position: absolute;
   visibility: hidden;
-  /* width: 30px;
-  height: 20px; */
+  width: auto;
+  height: auto;
+  transform: translateY(-120%);
+  padding: 5px;
+  background: black;
+  outline: 2px solid black;
+  border: 2px solid white;
+  z-index: 1;
 }
 
 .ts-point:hover {
