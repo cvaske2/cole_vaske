@@ -122,14 +122,14 @@
                     <div class='timeseries-container'>";
                         /* y-axis gridlines
                             The number of these is static so this isn't 100% necessary but I like to reduce my lines of code*/
-                        $NUM_Y_GRIDLINES = 4;
+                        $NUM_Y_GRIDLINES = 8;
                         for($i = 1; $i < $NUM_Y_GRIDLINES; ++$i) {
                             $html_string .= "<div class='y-bg-line' style='top: ".($i * 100 / $NUM_Y_GRIDLINES)."%;'></div>";
                         }
 
                         /* x-axis gridlines
                             The number of these is static so this isn't 100% necessary but I like to reduce my lines of code*/
-                        $NUM_X_GRIDLINES = 8;
+                        $NUM_X_GRIDLINES = 24;
                         for($i = 1; $i < $NUM_X_GRIDLINES; ++$i) {
                             $html_string .= "<div class='x-bg-line' style='left: ".($i * 100 / $NUM_X_GRIDLINES)."%;'></div>";
                         }
