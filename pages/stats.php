@@ -73,7 +73,7 @@
                 <h2 style='margin: none;'>Browser Access Statistics</h2>
                 <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.html</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated.</p>
                 <p>Everything was done using HTML and CSS, preprocessed with PHP. No Javascript was used whatsoever on this page.
-                <p><b><u>This page is not intended to be practical</u></b>--a better method for generating these visualizations would be to use a JS library or some kind of backend image generation process. The point was to improve my HTML and CSS skills as well as use PHP in a fun way.</p>
+                <p><b><u>This page is not intended to be practical</u></b>--a better method for generating these visualizations would be to use a JS library or some kind of server-side image generation process. The point was to improve my HTML and CSS skills as well as use PHP in a fun way.</p>
                 <h2>Visitor Browser Distribution</h2>
                 <div class='pie-container'>
                     <div class='pie'></div>
@@ -109,17 +109,18 @@
                         <span>".$ts_chart["most_visits"]." visits</span>
                         <span>".intval($ts_chart["most_visits"]/2)." visits</span>
                     </div>
-                    <div class='timeseries-container'>
-                        <div class='y-bg-line-1'></div>
-                        <div class='y-bg-line-2'></div>
-                        <div class='y-bg-line-3'></div>
-                        <div class='x-bg-line-1'></div>
-                        <div class='x-bg-line-2'></div>
-                        <div class='x-bg-line-3'></div>
-                        <div class='x-bg-line-4'></div>
-                        <div class='x-bg-line-5'></div>
-                        <div class='x-bg-line-6'></div>
-                        <div class='x-bg-line-7'></div>";
+                    <div class='timeseries-container'>";
+                        // y-axis gridlines
+                        $NUM_Y_GRIDLINES = 4;
+                        for($i = 1; $i < $NUM_Y_GRIDLINES; ++$i) {
+                            $html_string .= "<div class='y-bg-line' style='top: ".($i * 100 / $NUM_Y_GRIDLINES)."%;'></div>";
+                        }
+
+                        // x-axis gridlines
+                        $NUM_X_GRIDLINES = 8;
+                        for($i = 1; $i < $NUM_X_GRIDLINES; ++$i) {
+                            $html_string .= "<div class='x-bg-line' style='left: ".($i * 100 / $NUM_X_GRIDLINES)."%;'></div>";
+                        }
 
                         foreach ($ts_chart["data"] as $visit_count) {
                             $height = intval(($visit_count / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
