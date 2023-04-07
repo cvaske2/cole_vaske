@@ -129,7 +129,6 @@
 			++$data["Other"]["amt"];
         }
     }
-	// Since there is a newline at the end of the file, this loop will have a duplicate for the last saved agent. Remove it.
 
 	/* Because of the way I have implemented the pie chart in CSS, 
 	We need to add the percentage of the previous pie slices to the subsequent percentages */
@@ -149,7 +148,7 @@
 	$dates[$initial_dates_index] = 1;
 	$last_date_index = $initial_dates_index;
 
-	/* Need to build timeseries-style JSON data. 
+	/* Need to build timeseries-style JSON data.
 		The given data '$agent_file_contents' is sorted chronologically, so no sorting is necessary.
 		This loop accomplish do two things:
 			1. Counts the number of instances for each date then puts them into an associative array as "date => num_instances", and
