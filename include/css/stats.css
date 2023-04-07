@@ -42,7 +42,11 @@ h3 {
   background: #132300;
 }
 
-td {
+.legend th {
+  text-align: left;
+}
+
+.legend td {
   padding: .5vw 1vw;
 }
 

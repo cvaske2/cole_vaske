@@ -80,23 +80,33 @@
                     <div class='legend-ext'>
                         <table class='legend'>
                             <tr>
+                                <th><u>###<//u></th>
+                                <th><u>Browser</u></th>
+                                <th><u>Ct.</u></th>
+                                <th><u>Dist.</u></th>
+                            </tr>
+                            <tr>
                                 <td><div class='chrome-box'></div></td>
                                 <td>Chrome: </td>
+                                <td>".$pie_chart["Chrome"]["amt"]."</td>
                                 <td class='pct-cell'>".$pie_chart["Chrome"]["actual_pct"]."%</td>
                             </tr>
                             <tr>
                                 <td><div class='firefox-box'></div></td>
                                 <td>Firefox: </td>
+                                <td>".$pie_chart["Firefox"]["amt"]."</td>
                                 <td class='pct-cell'>".$pie_chart["Firefox"]["actual_pct"]."%</td>
                             </tr>
                             <tr>
                                 <td><div class='edge-box'></div></td>
                                 <td>Edge: </td>
+                                <td>".$pie_chart["Edge"]["amt"]."</td>
                                 <td class='pct-cell'>".$pie_chart["Edge"]["actual_pct"]."%</td>
                             </tr>
                             <tr>
                                 <td><div class='other-box'></div></td>
                                 <td>Other: </td>
+                                <td>".$pie_chart["Other"]["amt"]."</td>
                                 <td class='pct-cell'>".$pie_chart["Other"]["actual_pct"]."%</td>
                             </tr>
                         </table>
