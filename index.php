@@ -107,16 +107,16 @@
 		
         if($line[1] === null) {
 			// An empty line has been found. Continue to the next
-			// array_pop($agent_file_contents);
+			array_pop($agent_file_contents);
             continue;
         }
         ++$total_agents;
 		
         // Isolate the user agent information
         $agent = $line[0];
-        // $agent = substr($agent, strrpos($agent, "Gecko"));
-        // $agent = substr($agent, strpos($agent, " "));
-        // $agent = substr($agent, 0, strrpos($agent, "/"));
+        $agent = substr($agent, strrpos($agent, "Gecko"));
+        $agent = substr($agent, strpos($agent, " "));
+        $agent = substr($agent, 0, strrpos($agent, "/"));
 		
         // Start looking at the remainder of the agent
         if (strpos($agent, "Firefox") !== false) {
@@ -148,7 +148,6 @@
 
 	$dates[$initial_dates_index] = 1;
 	$last_date_index = $initial_dates_index;
-	logLine($agent_file_contents);
 
 	/* Need to build timeseries-style JSON data. 
 		The given data '$agent_file_contents' is sorted chronologically, so no sorting is necessary.
@@ -156,7 +155,6 @@
 			1. Counts the number of instances for each date then puts them into an associative array as "date => num_instances", and
 			2. Fills the space between dates (e.g., if no one accessed my site between 01/01/2023 and 01/05/2023) with "date => 0". */
 	foreach($agent_file_contents as $line) {
-		// logLine(array_slice($agent_file_contents, -1));
 		$current_date = strtok($line[1], " ");
 
 		if ($current_date == $last_date_index) {
