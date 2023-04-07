@@ -77,7 +77,7 @@
 
     function submitMessage($message, $email) {
         $fp = fopen(BASE_DIR_PREFIX."logs/contact_submissions.txt", "a");
-        $input = buildDateHeader()."\n[SENDER] $email\n\n".trim($message)."\n\n";
+        $input = buildDateHeader()."\n[SENDER] $email\n[MESSAGE]\n\n".trim($message)."\n\n[END MESSAGE]\n";
         fwrite($fp, $input);
         fclose($fp);
     }
