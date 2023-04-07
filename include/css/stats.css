@@ -119,8 +119,9 @@ h3 {
 }
 
 h4 {
+  margin: .25em auto .25em auto;
   text-align: center;
-  font-size: 2vw;
+  font-size: 2.15vw;
 }
 
 .tooltip-browser-info {

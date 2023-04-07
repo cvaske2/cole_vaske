@@ -140,7 +140,7 @@
                             $html_string .= "
                                 <div class='ts-point' style='height: ".$height."px'>
                                     <div class='ts-point-tooltip'>
-                                        <h4>".DateTime::createFromFormat("m-d-Y", $visit_date)->format("F j, Y")."</h4>
+                                        <h4><b>".DateTime::createFromFormat("m-d-Y", $visit_date)->format("F j, Y")."</b></h4>
                                         <div class='tooltip-content-wrapper'>
                                             <div class='tooltip-point-pie-chart' style='background: conic-gradient(";
 
