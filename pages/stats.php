@@ -115,9 +115,12 @@
                 <br><br><br><br><br>
                 <h2>Visitor Access Logs</h2>
                 <div class='access-logs-container'>
-                    <div class='ts-y-labels'>
-                        <span>".$ts_chart["most_visits"]." visits</span>
-                        <span>".intval($ts_chart["most_visits"]/2)." visits</span>
+                    <div class='ts-y-labels-wrapper'>
+                        <span class='y-axis-label'><u>Visits</u></span>
+                        <div class='ts-y-labels'>
+                            <span>".$ts_chart["most_visits"]."</span>
+                            <span>".intval($ts_chart["most_visits"]/2)."</span>
+                        </div>
                     </div>
                     <div class='timeseries-container'>";
                         /* y-axis gridlines
@@ -197,7 +200,7 @@
                     </div>
                     <div>
                     </div>
-                    <div class='ts-dates'>
+                    <div class='ts-dates-wrapper'>
                         <span>".$ts_chart["first_date"]."</span>
                         <span>".$ts_chart["mid_date"]."</span>
                         <span style='float: right;'>".$ts_chart["last_date"]."</span>

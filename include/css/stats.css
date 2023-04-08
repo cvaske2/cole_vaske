@@ -57,7 +57,7 @@ h3 {
 
 .access-logs-container {
   display: grid;
-  grid-template-columns: 95px auto;
+  grid-template-columns: 85px auto;
   grid-template-rows: auto auto;
   width: 100%;
   padding-top: 3vh;
@@ -78,6 +78,19 @@ h3 {
   height: calc(100% - 2px);
   background: #686868;
   z-index: 0;
+}
+
+.ts-y-labels-wrapper {
+  display: flex;
+}
+
+.y-axis-label {
+  display: flex;
+  margin: auto auto auto auto;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.5em;
+  letter-spacing: 5px;
 }
 
 .ts-y-labels {
@@ -121,7 +134,7 @@ h3 {
 h4 {
   margin: .25em auto .25em auto;
   text-align: center;
-  font-size: 2.15vw;
+  font-size: 1.5em;
 }
 
 .tooltip-browser-info {
@@ -142,7 +155,7 @@ h4 {
   visibility: visible;
 }
 
-.ts-dates {
+.ts-dates-wrapper {
   display: flex;
   width: 100%;
   justify-content: space-between;
