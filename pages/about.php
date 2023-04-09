@@ -7,7 +7,7 @@
         <title>Cole Vaske</title>
         <link rel='stylesheet' href='../include/css/styles.css'>
         <link rel='stylesheet' href='../include/css/about.css'>
-        <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
+        <script src='../include/js/global.js'></script>
     </head>
     <a id='top'></a>
     <?php
@@ -40,7 +40,7 @@
         <p>I did not originally plan to attend UNL for Software Engineering, I planned on Computer Science. My first year, the Software Engineering program was a relatively new program and lesser known than the Computer Science program. After applying to UNL and being accepted, I examined the Software Engineering major and realized that developing professional software for real-world applications was more suitable to me, so I decided upon Software Engineering.</p>
 
         <h1>Relevant Coursework</h1>
-        <p>I have fulfilled or am actively fulfilling within this semester the entire UNL 2019-2020 catalogue year requirements for a Bachelors of Science in Software Engineering</p>
+        <p>I have fulfilled or am actively fulfilling within this semester the entire UNL 2019-2020 catalogue year requirements for a Bachelors of Science in Software Engineering with a minor in mathematics.</p>
         <p>In addition to Software Engineering, I will also be graduating with a minor in Mathematics as well as a <a href='https://computing.unl.edu/focus-areas/'>focus area</a> in Data Science and Informatics. These courses included:</p>
         <ul>
             <li><b>[CSCE 474] Data Mining</b> [currently enrolled] - Introduction to data preparation and cleaning, apriori principle and association rules generation, clustering, and data classification.</li>

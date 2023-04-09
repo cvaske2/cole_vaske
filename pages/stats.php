@@ -77,8 +77,8 @@
                 <br><br>
                 <h2>Visitor Browser Distribution</h2>
                 <p>This pie chart demonstrates the distribution of browsers that have accessed my website.</p>
-                <p>Keep in mind that this data may be a little misleading since (1) a \"visit\" is recorded every time someone sends a request for the <a href='http://cse.unl.edu/~cvaske'>index.php</a> page, and (2) I do not have a very good CI/CD process--I currently program and test directly on the production site. This drastically skews the data in favor of Firefox, although occasionally I clean out some entries that are a result of my poor practices.</p>
-                <p>Eventually, I plan to use cookies to track whether or not a user has visited my website previously.</p>
+                <p>Keep in mind that this data may be a little misleading since (1) a \"visit\" is recorded every time someone sends a request for the <a href='http://cse.unl.edu/~cvaske'>index.php</a> page (thus someone repeatedly refreshing the page will affect the results), and (2) I do not have a very good CI/CD process--I currently program and test directly on the production site. This drastically skews the data in favor of my primary browser Firefox, although occasionally I clean out some entries that are a result of my poor practices.</p>
+                <p>Eventually, I plan to use cookies to track whether or not a user has visited my website previously. This will keep the data from getting skewed, and will enable me to do some more things with the data.</p>
                 <div class='pie-container'>
                     <div class='pie'></div>
                     <div class='legend-ext'>
@@ -125,7 +125,7 @@
                 <h2>Visitor Access Logs</h2>
                 <p>A chart containing day-by-day timeseries data for how many people have been accessing my website. Try hovering over each bar to see what kind of browsers accessed my website that day!</p>
                 <p>The chart contains data between <u>".DateTime::createFromFormat("m-d-Y", $ts_chart["first_date"])->format("F j, Y")."</u> and <u>".DateTime::createFromFormat("m-d-Y", $ts_chart["last_date"])->format("F j, Y")."</u>, inclusive.</p>
-                <p><b>Fun Fact</b>: If you want to test this feature as well as the pie chart above, you can head to the <a href='../index.php'>home page</a>. When you return to this page, you will see the count for your browser and the total visits increment by 1.</p>
+                <p><b>Fun Fact</b>: If you want to test this feature as well as the pie chart above, you can head to the <a href='../index.php'>home page</a>. When you return to this page, you will see the count for your browser and the total visits increment by 1 for today.</p>
                 <div class='access-logs-container'>
                     <div class='ts-y-labels-wrapper'>
                         <span class='y-axis-label'><u>Visits</u></span>
