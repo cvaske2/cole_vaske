@@ -1,0 +1,11 @@
+.about-img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.robotics-img {
+    object-fit: cover;
+    margin: auto 1em auto 1em;
+    height: 200px;
+    width: 200px;
+}
