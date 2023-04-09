@@ -156,6 +156,7 @@ h4 {
 
 .ts-dates-wrapper {
   display: flex;
+  margin: 5px auto 5vh auto;
   width: 100%;
   justify-content: space-between;
 }
