@@ -61,9 +61,9 @@
 			</main>
 		</div>
 	</body>
-	<footer>
-		<a href='#top'>Back to top</a>
-	</footer>
+	<?php
+        echo FOOTER_STRING;
+    ?>
 </html>
 
 <?php	

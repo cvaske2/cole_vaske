@@ -84,9 +84,9 @@ footer {
 }
 
 footer a {
+  display: flex;
   color: #757575;
-  margin: 5px;
-  margin-left: 20px;
+  margin: 5px 20px 5px 20px;
 }
 
 .socials {

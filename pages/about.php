@@ -1,6 +1,5 @@
 <?php
     require_once("../include/const.php");
-
 ?>
 
 <html>
@@ -56,7 +55,7 @@
             <li><b>[SOFT 460] Software Engineering for Robotics</b> - Introduction to autonomous car concepts using the F1TENTH base model vehicle running ROS on an embedded Linux system including LIDAR processing and localization and mapping.</li>
         </ul>
     </main>
-    <footer>
-        <a href='#top'>Back to top</a>
-    </footer>
+    <?php
+        echo FOOTER_STRING;
+    ?>
 </html>

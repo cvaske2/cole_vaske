@@ -32,10 +32,9 @@
 
             $html_string .= $validated_parameters ? returnContactSuccess($email) : returnContactForm();
 
+            $html_string .= FOOTER_STRING;
+
             $html_string .= "
-            <footer>
-                <a href='#top'>Back to top</a>
-            </footer>
         </html>";
 
     echo $html_string;

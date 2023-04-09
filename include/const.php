@@ -26,6 +26,12 @@
         </header>"
     );
 
+    define("FOOTER_STRING",
+        "<footer>
+            <a href='#top'>Back to top</a>
+            <a href='http://cse.unl.edu/~cvaske/pages/contact.php'>Contact Me</a>
+        </footer>");
+
     define("WARNING_BLOCK", 
         "<style type='text/css'>
             .container-warning {

@@ -19,11 +19,7 @@
         <p>During my time at EWB, I have been treasurer, fundraising lead and manager of the "Nebraska Team", and vice president.</p>
         <p>This page and its subpages details EWB-NUs and its projects, events, and my involvement in the organization.</p>
     </main>
-    <footer>
-        <a href='#top'>Back to top</a>
-    </footer>
+    <?php
+        echo FOOTER_STRING;
+    ?>
 </html>
-
-<?php
-    echo $html_string;
-?>

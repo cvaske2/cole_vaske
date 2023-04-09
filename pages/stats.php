@@ -235,11 +235,10 @@
                         <span style='float: right;'>".$ts_chart["last_date"]."</span>
                     </div>
                 </div>
-            </main>
-        </html>
-        <footer>
-            <a href='#top'>Back to top</a>
-        </footer>";
+            </main>";
+            
+    $html_string .= FOOTER_STRING."
+        </html>";
 
     echo $html_string;
 ?>
