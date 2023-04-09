@@ -64,7 +64,6 @@
                         padding: 2px 2px 2px 2px;
                       }
                 </style>
-                <script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
             </head>
             <a id='top'></a>
             ".HEADER_STRING."
