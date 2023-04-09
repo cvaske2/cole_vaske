@@ -123,6 +123,7 @@
                         </div>
                     </div>
                     <div class='timeseries-container'>";
+
                         /* y-axis gridlines
                             The number of these is static so this isn't 100% necessary but I like to reduce my lines of code*/
                         $NUM_Y_GRIDLINES = 8;
@@ -138,11 +139,28 @@
                         }
 
                         // Place each bar in the timeseries chart
+                        $bar_count = count($ts_chart["data"]);
+                        $bar_iteration = 0;
                         foreach ($ts_chart["data"] as $visit_date => $visit_count_obj) {
+                            
+                            /* The following conditional loop and its corresponding variables sets the offset of the bar tooltip.
+                                This is necessary because otherwise tooltips near the edge of the window will hang outside of the window,
+                                making some of the information invisible to the user. */
+                            ++$bar_iteration;
+                            $content_alignment_offset = 0;
+                            $OFFSETS_EFFECT_DEPTH = 14; // the number of bars from either edge that will be affected by this code
+                            if ($bar_iteration < $OFFSETS_EFFECT_DEPTH) {
+                                // This will produce a positive number so the tooltip is offset ot the right
+                                $content_alignment_offset = ($OFFSETS_EFFECT_DEPTH - $bar_iteration) / 2;
+                            } else if ($bar_count - $bar_iteration < $OFFSETS_EFFECT_DEPTH) {
+                                // This will produce a negative number so the tooltip is offset ot the left
+                                $content_alignment_offset = ($bar_count - $bar_iteration - 14) / 2;
+                            }
+
                             $height = intval(($visit_count_obj["total"] / $ts_chart["most_visits"]) * $TS_CHART_HEIGHT);
                             $html_string .= "
-                                <div class='ts-point' style='height: ".$height."px'>
-                                    <div class='ts-point-tooltip'>
+                                <div class='ts-point' style='height: ".$height."px;'>
+                                    <div class='ts-point-tooltip' style='transform: translateY(-100%) translateX(".$content_alignment_offset."em);'>
                                         <h4><b>".DateTime::createFromFormat("m-d-Y", $visit_date)->format("F j, Y")."</b></h4>
                                         <div class='tooltip-content-wrapper'>
                                             <div class='tooltip-point-pie-chart' style='background: conic-gradient(";
@@ -210,8 +228,7 @@
         </html>
         <footer>
             <a href='#top'>Back to top</a>
-        </footer>
-    ";
+        </footer>";
 
     echo $html_string;
 ?>
