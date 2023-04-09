@@ -124,6 +124,7 @@
 
                 <h2>Visitor Access Logs</h2>
                 <p>A chart containing day-by-day timeseries data for how many people have been accessing my website. Try hovering over each bar to see what kind of browsers accessed my website that day!</p>
+                <p>The chart contains data between <u>".DateTime::createFromFormat("m-d-Y", $ts_chart["first_date"])->format("F j, Y")."</u> and <u>".DateTime::createFromFormat("m-d-Y", $ts_chart["last_date"])->format("F j, Y")."</u>, inclusive.</p>
                 <div class='access-logs-container'>
                     <div class='ts-y-labels-wrapper'>
                         <span class='y-axis-label'><u>Visits</u></span>
