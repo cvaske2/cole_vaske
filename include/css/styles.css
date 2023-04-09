@@ -1,6 +1,5 @@
 body {
   background-color: #132300;
-
   margin: 0;
 }
 
@@ -99,4 +98,16 @@ footer a {
   width: 40px;
   height: auto;
   margin: .25em;
+}
+
+/* Global elements */
+.breaker-bar-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.breaker-bar {
+  width: 90%;
+  height: 3px;
+  background-color: #67ff78;
 }
