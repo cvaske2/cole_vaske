@@ -7,6 +7,7 @@
         <link rel='stylesheet' href='../include/css/styles.css'>
         <link rel='stylesheet' href='../include/css/ewb.css'>
         <script src='../include/js/global.js'></script>
+        <script src='../include/js/ewb.js'></script>
     </head>
     <a id='top'></a>
     <?php
@@ -14,24 +15,30 @@
     ?>
     <div class='content-wrapper'>
         <div class='nav'>
-            <span class='nav-heading'>EWB Sub-pages</span>
+            <span class='nav-heading'><b>EWB Sub-pages</b></span>
             <div class='separator-bar-wrapper'>
                 <div class='separator-bar'></div>
             </div>
             <ul>
                 <li>
-                    <button>Main</button>
+                    <button onclick="loadPage('main')">Main</button>
                 </li>
                 <li>
-                    <button>Nebraska Team</button>
+                    <button onclick="loadPage('ne_team')">Nebraska Team</button>
                 </li>
                 <li>
-                    <button>My Roles</button>
+                    <button onclick="loadPage('roles')">My Roles</button>
                 </li>
                 <li>
-                    <button>Summer 2023 Travel</button>
+                    <button onclick="loadPage('fundraising')">Fundraising</button>
+                </li>
+                <li>
+                    <button onclick="loadPage('travel')">Summer 2023 Travel</button>
                 </li>
             </ul>
+            <div class='separator-bar-wrapper'>
+                <div class='separator-bar'></div>
+            </div>
         </div>
         <main>
             <?php

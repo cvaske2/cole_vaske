@@ -4,22 +4,17 @@
 
 .nav {
     display: block;
-    width: auto;
-    background: #353535;
-}
-
-.nav * {
-    box-sizing: border-box;
+    width: 25vw;
+    background: #494949;
 }
 
 .nav-heading {
-    display: inline-block;
+    display: block;
     width: 100%;
     text-align: center;
-    margin-top: .5em;
-    margin-bottom: .25em;
+    margin: .5em auto;
     color: #ffffec;
-    font-size: 1.75vw;
+    font-size: 1.5em;
 }
 
 .separator-bar-wrapper {
@@ -42,15 +37,44 @@
 
 .nav li {
     display: inline-block;
-    position: relative;
-    margin: 1vh auto;
+    width: 100%;
+    height: auto;
     color: #ffffec;
-    box-sizing: border-box;
 }
 
 .nav button {
     display: block;
-    width: 100%;
-    white-space: nowrap;
-    /* padding: 1vh 2vw 1vh 2vw;     */
+    position: relative;
+    width: 85%;
+    height: 3em;
+    text-align: left;
+    font-size: .75em;
+    background: #021300;
+    color: #67ff78;
+    border: none;
+    cursor: pointer;
+    transition-property: background-color, color;
+    transition-duration: .25s;
+}
+
+.nav button:hover {
+    background: #67ff78;
+    color: #021300;
+}
+
+.nav button::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    width: 0px;
+    height: 0px;
+    border-top: 1.5em solid transparent;
+    border-left: 1.5em solid #021300;
+    border-bottom: 1.5em solid transparent;
+    transition: border-left .25s;
+}
+
+.nav button:hover:after {
+    border-left: 1.5em solid #67ff78;
 }

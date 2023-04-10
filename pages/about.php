@@ -15,8 +15,8 @@
     ?>
     <main>
         <h1>Background</h1>
-        <p>I gained interested in engineering when I did VEX Robotics in middle school. At the time, I was only interested in the mechanical design and operation of the crude robot we were building.</p>
-        <p>I remember at one point, our pseudo-linear-slide lift kept slipping off the tracks, so we added a bunch of rubber bands to hold the slide towers together more tigntly so the lift wouldn't slip. At the time, programming was not something that I was interested in--even the higly optimized <a href='https://www.vexrobotics.com/easyc-v5.html'>graphical programming UI that VEX distributed at the time</a> was too daunting for me to understand.<p>
+        <p>I gained interested in engineering when I did VEX Robotics in middle school. At the time, I was only interested in the mechanical design and operation of the crude robot we were building. I remember at one point, our pseudo-linear-slide lift kept slipping off the tracks, so we added a bunch of rubber bands to hold the slide towers together more tigntly so the lift wouldn't slip.</p>
+        <p>At the time, programming was not something that I was interested in--even the higly optimized <a href='https://www.vexrobotics.com/easyc-v5.html'>graphical programming UI that VEX distributed at the time</a> was too daunting for me to understand.</p>
         <p>While at Omaha North High School, I took some of the engineering classes that were offered. One of them was an introductory Computer Science course, where we learned Python. I never particularly enjoyed the course until I decided to make a calculator for my final project. I fell in love with all of the different design possibilities and different approaches that I could take on to complete the app.</p>
         <p>After that, I applied some of my programming interest by working on the programming side of VEX robotics and taking additional programming and computing classes in high school.</p>
         <div class='about-img-container'>
