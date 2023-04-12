@@ -44,10 +44,24 @@
             <?php
                 echo CLASS_BLOCK;
             ?>
-            <h1>University of Nebraska Engineers Without Borders</h1>
-            <p>I have been a member of the University of Nebraska student chapter of Engineers Without Borders (EWB-NU) for my entire collegiate career. The chapter is responsible for a bridge project in Zambia and a solar panel project in Madagascar, as well as a number of local outreach events and programs.</p>
-            <p>During my time at EWB, I have been treasurer, fundraising lead and manager of the "Nebraska Team", and vice president.</p>
-            <p>This page and its subpages details EWB-NUs and its projects, events, and my involvement in the organization.</p>
+            <div id='main'>
+                <h1>University of Nebraska Engineers Without Borders</h1>
+                <p>I have been a member of the University of Nebraska student chapter of Engineers Without Borders (EWB-NU) for my entire collegiate career. The chapter is responsible for a bridge project in Zambia and a solar panel project in Madagascar, as well as a number of local outreach events and programs.</p>
+                <p>During my time at EWB, I have been treasurer, fundraising lead and manager of the "Nebraska Team", and vice president.</p>
+                <p>This page and its subpages details EWB-NUs and its projects, events, and my involvement in the organization.</p>
+            </div>
+            <div id='ne_team' style='display: none;'>
+                <h1>EWB-NU "Nebraska Team"</h1>
+            </div>
+            <div id='roles' style='display: none;'>
+                <h1>My Roles in EWB-NU</h1>
+            </div>
+            <div id='fundraising' style='display: none;'>
+                <h1>Fundraising</h1>
+            </div>
+            <div id='travel' style='display: none;'>
+                <h1>Summer 2023 Madagascar Travel</h1>
+            </div>
         </main>
     </div>
     <?php
