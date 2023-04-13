@@ -4,8 +4,12 @@
 
 .nav {
     display: block;
-    width: 25vw;
     background: #494949;
+    flex: 1;
+}
+
+main {
+    flex: 5;
 }
 
 .nav-heading {
