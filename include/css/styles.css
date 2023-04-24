@@ -54,16 +54,16 @@ header li a {
   text-align: center;
   text-decoration: none;
   padding: 14px 0px;
-  background-image: linear-gradient(to right, #004909, #00f11c);
+  background: linear-gradient(to right, #00f11c, #00f11c);
   background-position: bottom left;
-  background-size: 0% 2px;
+  background-size: 0% 5%;
   background-repeat: no-repeat;
   transition: background-size 0.3s, background-position 0s 0.3s;
 }
 
 header li a:hover {
   background-position: bottom right;
-  background-size: 100% 2px;
+  background-size: 100% 5%;
 }
 
 main ul li {

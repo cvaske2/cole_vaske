@@ -49,6 +49,12 @@
                 <p>I have been a member of the University of Nebraska student chapter of Engineers Without Borders (EWB-NU) for my entire collegiate career. The chapter is responsible for a bridge project in Zambia and a solar panel project in Madagascar, as well as a number of local outreach events and programs.</p>
                 <p>During my time at EWB, I have been treasurer, fundraising lead and manager of the "Nebraska Team", and vice president.</p>
                 <p>This page and its subpages details EWB-NUs and its projects, events, and my involvement in the organization.</p>
+                <h1>About EWB-NU</h1>
+                <p>EWB-NU is the Nebraska student chapter of Engineers Without Borders-USA. It was founded in 2010 and is an inter-campus student organization within the University of Nebraska system and has members on both UNL and UNO campuses.
+                <p>The chapter is comprised of three core teams: the Zambia bridge team, the Madagascar solar team, and the Nebraska Team.</p>
+                <h1>Zambia Team</h1>
+                <h1>Madagascar Team</h1>
+                <h1>Nebraska Team</h1>
             </div>
             <div id='ne_team' style='display: none;'>
                 <h1>EWB-NU "Nebraska Team"</h1>
