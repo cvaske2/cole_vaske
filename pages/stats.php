@@ -3,7 +3,7 @@
     require_once("../include/logging.php");
     $BASE_DIR_PREFIX = "../"; // Prefix to the base dir (for images, etc.)
 
-    $PIE_CHART_VW = 40;
+    $PIE_CHART_VH = 60;
     $TS_CHART_HEIGHT = 300;
 
     $pie_chart = json_decode(file_get_contents("../logs/data/user_agent_calc.json"), true);
@@ -17,14 +17,14 @@
                 <link rel='stylesheet' href='".$BASE_DIR_PREFIX."include/css/stats.css'>
                 <style type='text/css'>
                     .pie {
-                        width: ".$PIE_CHART_VW."vw;
-                        height: ".$PIE_CHART_VW."vw;
+                        width: ".$PIE_CHART_VH."vh;
+                        height: ".$PIE_CHART_VH."vh;
                         /* background: conic-gradient(<color> <end%>, <color> <start% -or- 0%> <end%>, ..., <color> <start%>); */
                         background: conic-gradient(".$pie_chart['Chrome']['color']." ".$pie_chart['Chrome']['pct'].", 
                             ".$pie_chart['Firefox']['color']." 0% ".$pie_chart['Firefox']['pct'].", 
                             ".$pie_chart['Edge']['color']." 0% ".$pie_chart['Edge']['pct'].", 
                             ".$pie_chart['Other']['color']." 0% ".$pie_chart['Other']['pct'].");
-                        border-radius: ".$PIE_CHART_VW."vh;
+                        border-radius: ".$PIE_CHART_VH."vh;
                     }
                     .chrome-box {
                         width: 1em;
@@ -67,16 +67,14 @@
             </head>
             <a id='top'></a>
             ".HEADER_STRING."
-            ".WARNING_BLOCK."
             <main>
                 <h2 style='margin: none;'>Browser Access Statistics</h2>
-                <p>This page has some statistics about what kinds of browsers are accessing my website. Your browser's user agent is collected when you land on my <a class='hyperlink' href=http://cse.unl.edu/~cvaske>index.php</a> page and stored in a file alongside others. When you refresh this page, that file is examined and the below is calculated.</p>
-                <p>This page was treated as a mini-project. A significant amount of effort was put into this page compared to the rest of the website. Everything was done using HTML and CSS, preprocessed with PHP. No Javascript was used whatsoever on this page.
+                <p>This page has some statistics about what kinds of browsers are accessing my website.</p>
+                <p>Everything was done using HTML and CSS, preprocessed with PHP. No Javascript was used whatsoever on this page.</p>
                 <p><b><u>This page is not intended to be practical</u></b>--a better method for generating these visualizations would be to use a JS library or some kind of server-side image generation process. The point was to improve my HTML and CSS skills as well as use PHP in a fun way.</p>
-                
                 <br><br>
                 <h2>Visitor Browser Distribution</h2>
-                <p>This pie chart demonstrates the distribution of browsers that have accessed my website.</p>
+                <p>The distribution of browsers that have accessed my website.</p>
                 <p>Keep in mind that this data may be a little misleading since (1) a \"visit\" is recorded every time someone sends a request for the <a href='http://cse.unl.edu/~cvaske'>index.php</a> page (thus someone repeatedly refreshing the page will affect the results), and (2) I do not have a very good CI/CD process--I currently program and test directly on the production site. This drastically skews the data in favor of my primary browser Firefox, although occasionally I clean out some entries that are a result of my poor practices.</p>
                 <p>Eventually, I plan to use cookies to track whether or not a user has visited my website previously. This will keep the data from getting skewed, and will enable me to do some more things with the data.</p>
                 <div class='pie-container'>
@@ -84,7 +82,7 @@
                     <div class='legend-ext'>
                         <table class='legend'>
                             <tr>
-                                <th><u>###<//u></th>
+                                <th></th>
                                 <th><u>Browser</u></th>
                                 <th><u>Ct.</u></th>
                                 <th><u>Dist.</u></th>

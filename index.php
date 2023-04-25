@@ -31,7 +31,16 @@
 			<main>
 				<h1>Cole Vaske</h1>
 				<p>I am a senior Software Engineering student at the University of Nebraska--Lincoln. My career interests include database design and management, and backend systems development.</p>
-
+				<div class='tech-img-container'>
+					<img class='tech-img' src='./images/index/html.png' alt='HTML logo'>
+					<img class='tech-img' src='./images/index/css.png' alt='CSS logo'>
+					<img class='tech-img' src='./images/index/node.png' alt='NodeJS logo'>
+					<img class='tech-img' src='./images/index/php.png' alt='PHP logo'>
+					<img class='tech-img' src='./images/index/sql.png' alt='SQL logo'>
+					<img class='tech-img' src='./images/index/python.png' alt='Python logo'>
+					<img class='tech-img' src='./images/index/bash.png' alt='Bash logo'>
+					<img class='tech-img' src='./images/index/java.png' alt='Java logo'>
+				</div>
 				<h1>Past Experiences</h1>
 				<p>My professional experience includes working for a shared services organization for trucking companies. The company also had a number of internal websites that each of the internal teams used including legal, HR, and financing. As a software development intnern, I gained fullstack website development skills using jQuery, VueJS, and Bootstrap for frontend development, and SQL for backend interfacing with MySQL and MSSQL databases.</p>
 				<p>As a software engineering student at the University of Nebraska--Lincoln, I have had the privilege participating in the School of Computing Capstone Program for two years. My first year, I was responsible for developing a backend API interfacing with an MSSQL database from scratch. This process also involved designing and implementing a comprehensive error tracking system where each data point amongst thousands in a single upload could have several levels of uncertainty that was stored, tracked, and available for display to users and admins.</p>
