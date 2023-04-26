@@ -2,10 +2,24 @@
   display: flex;
   justify-content: center;
   padding-top: 50px;
+  position: relative;
 }
 .header-img {
-  height: 400px;
-  width: 400px;
+  height: 25em;
+  width: 25em;
+  position: absolute;
+  border: 1px solid black;
+}
+.binary-backdrop {
+  position: relative;
+  text-align: center;
+  color: #26de3c;
+  font-size: 2em;
+  margin: 0px 5em 0px 5em;
+}
+.binary-backdrop span {
+  display: block;
+  color: #244200;
 }
 .tech-img-container {
   display: flex;

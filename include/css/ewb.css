@@ -16,9 +16,10 @@ main {
     display: block;
     width: 100%;
     text-align: center;
-    margin: .5em auto;
     color: #ffffec;
+    resize: horizontal;
     font-size: 1.5em;
+    margin: .5em auto;
 }
 
 .separator-bar-wrapper {

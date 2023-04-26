@@ -26,6 +26,31 @@
 	<body>
 		<div>
 			<div class='img-container'>
+				<div class='binary-backdrop'>
+					<!-- This binary is randomly generated. Don't waste your time trying to decipher it -->
+					<?php
+						// For the purpose of the image backdrop of binary, we need to know the height of the image in em
+						$HEADER_IMAGE_HEIGHT = 25;
+						$BINARY_LINE_FONTSIZE = 2;
+						$NUM_CHARS = 50;
+
+						$MAX_MARGIN = 10;
+
+						for($i = $HEADER_IMAGE_HEIGHT; $i >= 0; $i -= $BINARY_LINE_FONTSIZE) {
+							$margin = rand(-$MAX_MARGIN, $MAX_MARGIN);
+							$color_offset = $BACKGROUND_DEC + $margin * $margin;
+							$html_string = "<span style='
+											margin-left: ".$margin."em;
+											margin-top: -".($BINARY_LINE_FONTSIZE / 9.5)."em;
+										'>";
+							for ($j = 0; $j < $NUM_CHARS; ++$j) {
+								$html_string .= rand(0, 1);
+							}
+							$html_string .= "</span>\n";
+							echo $html_string;
+						}
+					?>
+				</div>
 				<img class='header-img' src='images/me.jpg' alt='Cole Vaske Portrait'>
 			</div>
 			<main>
