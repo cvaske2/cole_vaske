@@ -210,13 +210,13 @@
 				$new_date = date_add($from, new DateInterval('P1D'))->format('m-d-Y'); 
 				$dates[$new_date]["total"] = 0;
 			}
-			if($dates[$last_date_index]["total"] > $visit_high) {
-				$visit_high = $dates[$last_date_index]["total"];
-			}
 			$last_date_index = $current_date;
 
 			$dates[$current_date]["total"] = 1;
 			$dates[$current_date][$line[0]] = 1;
+		}
+		if ($dates[$current_date]["total"] > $visit_high) {
+			$visit_high = $dates[$last_date_index]["total"];
 		}
 	}
 
