@@ -27,6 +27,29 @@ a {
   color: #67ff78;
 }
 
+.multi-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.multi-square-img {
+  object-fit: cover;
+  margin: auto 1em auto 1em;
+  height: 10em;
+  width: 10em;
+  border: 2px solid white;
+  background-color: black;
+  transition: transform .35s;
+  z-index: 0;
+  cursor: zoom-in;
+}
+
+.multi-square-img:hover {
+  position: relative;
+  object-fit: cover;
+  transform: scale(2);
+  z-index: 1;
+}
 
 /* Nav bar */
 header ul {
@@ -40,7 +63,7 @@ header ul {
   background-color: #021300;
   position: relative;
 }
-  
+
 header li {
   float: left;
   margin: 0px 20px;

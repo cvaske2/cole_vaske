@@ -1,3 +1,10 @@
+.multi-rect-img {
+    object-fit: cover;
+    height: 200px;
+    width: auto;
+}
+
+/* Left sub-page nav bar */
 .content-wrapper {
     display: flex;
 }

@@ -19,19 +19,19 @@
         <p>Initially, I had no interest in programming was not something that I was interested in--even the higly optimized <a href='https://www.vexrobotics.com/easyc-v5.html'>graphical programming UI that VEX distributed at the time</a> was too daunting for me to understand. I left the understanding of programming to my teammates.</p>
         <p>While at Omaha North High School, I took some of the engineering classes that were offered. One of them was an introductory Computer Science course, where we learned Python. I never particularly enjoyed the course until I decided to make a calculator for my final project. I fell in love with all of the different design possibilities and different approaches that I could take on to complete the app.</p>
         <p>I applied this newfound interest through VEX robotics and taking additional computing classes in high school.</p>
-        <div class='about-img-container'>
-            <img class='robotics-img' src='../images/about/1064J_1.jpg' alt='Image of Omaha North High School robotics activities'>
-            <img class='robotics-img' src='../images/about/1064J_2.jpg' alt='Image of Omaha North High School robotics activities'>
-            <img class='robotics-img' src='../images/about/1064C_1.jpg' alt='Image of Omaha North High School robotics activities'>
-            <img class='robotics-img' src='../images/about/1064C_2.jpg' alt='Image of Omaha North High School robotics activities'>
+        <div class='multi-img-container'>
+            <img class='multi-square-img' src='../images/about/1064J_1.jpg' alt='Image of Omaha North High School robotics activities'>
+            <img class='multi-square-img' src='../images/about/1064J_2.jpg' alt='Image of Omaha North High School robotics activities'>
+            <img class='multi-square-img' src='../images/about/1064C_1.jpg' alt='Image of Omaha North High School robotics activities'>
+            <img class='multi-square-img' src='../images/about/1064C_2.jpg' alt='Image of Omaha North High School robotics activities'>
         </div>
         <p>By my junior year, I was experienced enough to start seeing some success. Thanks to the success of my team and a generous grant towards our robotics program, I had the opportunity to fly to China to compete in an international <a href='https://www.create-found.org/'>CREATE robotics</a> tournament in Shanghai during the summer of 2018. This was a life-changing experience that I will never forget.
-        <div class='about-img-container'>
-            <img class='robotics-img' src='../images/about/china_1.jpg' alt='Image of Omaha North High School robotics activities'>
-            <img class='robotics-img' src='../images/about/china_2.jpg' alt='Image of Omaha North High School robotics activities'>
-            <img class='robotics-img' src='../images/about/china_3.jpg' alt='Image of Omaha North High School robotics activities'>
-            <img class='robotics-img' src='../images/about/china_4.jpg' alt='Image of Omaha North High School robotics activities'>
-            <img class='robotics-img' src='../images/about/china_5.jpg' alt='Image of Omaha North High School robotics activities'>
+        <div class='multi-img-container'>
+            <img class='multi-square-img' src='../images/about/china_1.jpg' alt='Image of Omaha North High School robotics activities'>
+            <img class='multi-square-img' src='../images/about/china_2.jpg' alt='Image of Omaha North High School robotics activities'>
+            <img class='multi-square-img' src='../images/about/china_3.jpg' alt='Image of Omaha North High School robotics activities'>
+            <img class='multi-square-img' src='../images/about/china_4.jpg' alt='Image of Omaha North High School robotics activities'>
+            <img class='multi-square-img' src='../images/about/china_5.jpg' alt='Image of Omaha North High School robotics activities'>
         </div>
         <p>With my team and an alliance with another team from the boarding school in China, we were tournament finalists.</p>
 
