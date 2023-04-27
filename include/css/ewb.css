@@ -1,7 +1,17 @@
-.multi-rect-img {
-    object-fit: cover;
-    height: 200px;
-    width: auto;
+h2 {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.header-img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header-img {
+    border: 2px solid white;
+    width: 60%;
+    height: auto;
 }
 
 /* Left sub-page nav bar */
@@ -25,7 +35,7 @@ main {
     text-align: center;
     color: #ffffec;
     resize: horizontal;
-    font-size: 1.5em;
+    font-size: 2vw;
     margin: .5em auto;
 }
 
@@ -36,7 +46,7 @@ main {
   
 .separator-bar {
     width: 90%;
-    height: .5px;
+    height: 1px;
     background-color: #ffffec;
   }
 
