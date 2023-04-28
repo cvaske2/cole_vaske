@@ -15,6 +15,9 @@
 <html>
 	<head>
 		<title>Cole Vaske</title>
+		<meta name='author' content='Cole Vaske'>
+		<meta name='description' content='A simple personal/resume website'>
+		<meta name='keywords' content='Resume, simple website, PHP, HTML/CSS, portfolio'>
 		<link rel='stylesheet' href='include/css/styles.css'>
 		<link rel='stylesheet' href='include/css/index.css'>
 		<script src='".BASE_DIR_PREFIX."include/js/global.js'></script>
