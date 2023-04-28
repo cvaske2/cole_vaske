@@ -27,6 +27,11 @@ a {
   color: #67ff78;
 }
 
+.single-img-container {
+  display: flex;
+  justify-content: center;
+}
+
 .multi-img-container {
   display: flex;
   justify-content: center;

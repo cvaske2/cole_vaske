@@ -39,11 +39,11 @@
             <div class='separator-bar-wrapper'>
                 <div class='separator-bar'></div>
             </div>
+            <div class='single-img-container'>
+                <img class='ewb-logo' src='../images/ewb/ewb_nu.png' alt='EWB-NU Logo'>
+            </div>
         </div>
         <main>
-            <?php
-                echo CLASS_BLOCK;
-            ?>
             <div id='main'>
                 <h1>University of Nebraska Engineers Without Borders</h1>
                 <p>I have been a member of the University of Nebraska student chapter of Engineers Without Borders (EWB-NU) for my entire collegiate career. The chapter is responsible for a bridge project in Zambia and a solar panel project in Madagascar, as well as a number of local outreach events and programs.</p>
@@ -81,7 +81,6 @@
                 <h1>Nebraska Team</h1>
                 <p>The Nebraska Team was founded in ~2018 and was formed because our fundraising and local outreach activities grew too large for a committee of only officers to handle.</p>
                 <p>The Nebraska Team is responsible for fundraising and local outreach. You can read more about the Nebraska Team under the "Nebraska Team" tab.</p>
-                <br><br><br>
             </div>
             <div id='ne_team' style='display: none;'>
                 <div class='header-img-container'>
@@ -113,7 +112,6 @@
                 <h1>Fundraising</h1>
                 <p>Fundraising is the biggest activity that the Nebraska Team partakes in and is one of the fundamental activites for the chapter as a whole. Without fundraising for activities locally and more importantly our projects internationally, our projects would not be possible.</p>
                 <p>You can read more about the Nebraska Team's, and by extension EWB-NU's fundraising activities, on the fundraising sub-page.</p>
-                <br><br><br>
             </div>
             <div id='fundraising' style='display: none;'>
                 <h1>Fundraising</h1>
@@ -178,10 +176,34 @@
             </div>
             <div id='roles' style='display: none;'>
                 <h1>My Roles in EWB-NU</h1>
+                <p>During my time in EWB-NU, I have attained a number of leadership roles. This page chronologizes these positions.</p>
+
+                <h1>Treasurer</h1>
+                <p>As a sophomore student, I was still relatively new to EWB. This was my first leadership role and was a very good introduction to leadership within EWB.</p>
+                <p>My tasks primarily involved acting as a representative with the University Student Organization Financial Services Office, which entailed approving member reimbursement requests, auditing our expense reports, and keeping track of the total account balance with both the SOFS office and our EWB-USA account.</p>
+
+                <h1>Fundraising Lead</h1>
+                <p>By Junior year, I sought a more involved role. Fundraising Lead is one of two leadership roles involved with managing the Nebraska Team and is responsible for managing all of the fundraising activities of the chapter, except for applying for Student Program Funds from the college. This role is by far one of the most involved roles in the chapter and is a huge time commitment.</p>
+                <p>This role encompasses all of the fundraising activities that the organization engages in. This includes the Minigolf Fundraiser, Pizza Thursday, Glow Big Red, and writing a newsletter to supporters. Ultimately, it is up to the Fundraising Lead to ensure that these activities are completed, and done well.</p>
+                <p>This role is particularly challenging because it involves being a leader of the Nebraska Team. This is both a blessing and a curse, because while it is nice to have a dedicated team of people to help you with the fundraising efforts, it can be difficult to communicate all of the requirements and make sure each member is completing their tasks appropriately.</p>
+                <p>I was a fundraising for both my junior and senior years.</p>
+
+                <h1>Vice President</h1>
+                <p>The Vice President is a highly active member in Engineers Without Borders, aware of all activities of the club, its officers, and its teams. In addition to the president, the vice president is to act as a general leader of the club, stepping up when members or officers need help, or something needs to get done.</p>
+                <p>My primary job as a vice president was to act as an ambassador between the College of Engineering (through the Engineering Student Advisory Board) and the organization itself. To receive funding from the college, an organization needs to be in good standing with the college.</p>
+                <p>This role improved my interpersonal skills as I acted as a representative for EWB to a large body of students, professors, and staff within the College of Engineering.</p>
+                <p>I assumed the role during my senior year, concurrently as a Fundraising Lead as well.</p>
             </div>
             <div id='travel' style='display: none;'>
                 <h1>Summer 2023 Madagascar Travel</h1>
+                <p>This summer, despite having to be a recent graduate, I will be traveling to Kianjavato in Madagascar to assist the solar team with assessing recent damages to our installed systems, documenting damage, and making minor repairs.</p>
+                <p>We will leave the United States to Paris International Airport on May 31 and leave the international airport in Antananarivo, Madagascar on June 17.</p>
+                <p>For the bulk the trip, we will be staying at the <a href='https://madagascarpartnership.org/field-sites/kianjavato/'>Madagascar Biodiversity Partnership</a> field office in Kianjavato. This partnership is through the Henry Doorly Zoo--which is likely the reason our chapter was selected to take on this project in Kianjavato.</p>
+                <div class='single-img-container'>
+                    <iframe class='kianjavato-map' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6772.613277646937!2d47.862837310289656!3d-21.379580527546505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e8f6ca07d090eb%3A0x45ce81e88ed9e860!2sKianjavato%2C%20Madagascar!5e1!3m2!1sen!2sus!4v1682627733514!5m2!1sen!2sus"></iframe>
+                </div>
             </div>
+            <br><br><br>
         </main>
     </div>
     <?php
