@@ -139,3 +139,17 @@ footer a {
   height: 3px;
   background-color: #67ff78;
 }
+
+/* Global keyframes for animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(25%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

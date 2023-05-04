@@ -9,6 +9,7 @@
   width: 25em;
   position: absolute;
   border: 1px solid black;
+  animation: slideInFromBottom .5s, fadeIn .5s;
 }
 .binary-backdrop {
   position: relative;
