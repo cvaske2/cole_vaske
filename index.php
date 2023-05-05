@@ -172,6 +172,7 @@
 		$line[0] = getBrowserFromUserAgent($line[0]);
 		++$data[$line[0]]["amt"];
     }
+	unset($line);
 
 	/* Because of the way I have implemented the pie chart in CSS, 
 	We need to add the percentage of the previous pie slices to the subsequent percentages */
