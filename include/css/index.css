@@ -3,13 +3,13 @@
   justify-content: center;
   padding-top: 50px;
   position: relative;
+  animation: growIn .5s, fadeIn .5s;
 }
 .header-img {
   height: 25em;
   width: 25em;
   position: absolute;
   border: 1px solid black;
-  animation: slideInFromBottom .5s, fadeIn .5s;
 }
 .binary-backdrop {
   position: relative;
