@@ -7,6 +7,7 @@ var defaultBorderColor = null;
 window.addEventListener('load', function() {
 
     contactForm = document.getElementById('contactForm');
+    submitBtn = document.getElementById('submit-btn');
     defaultBorderColor = contactForm.message.style.border;
 });
 
@@ -43,4 +44,10 @@ function submitForm(event) {
         event.preventDefault();
         return;
     }
+}
+
+function disableFormElements() {
+    contactForm.message.disabled = true;
+    contactForm.email.disabled = true;
+    submitBtn.disabled = true;
 }

@@ -1,3 +1,8 @@
+:root {
+    --disabled-border: #434343;
+    --disabled-text: #767676;
+}
+
 legend {
     color: #67ff78;
     font-family: monospace;
@@ -30,6 +35,11 @@ textarea {
     margin-bottom: 15px;
 }
 
+textarea:disabled {
+    border: 2px solid var(--disabled-border);
+    resize: none;
+}
+
 #email {
     width: 30vw;
     padding: 5px 5px;
@@ -40,6 +50,9 @@ textarea {
     background-color: #021300;
     font-size: 16px;
     resize: none;
+}
+#email:disabled {
+    border: 2px solid var(--disabled-border);
 }
 
 .submit-btn {
@@ -63,8 +76,14 @@ textarea {
     color: red;
 }
 
-.submit-btn:active {
-    box-shadow: 0px 0px 0px 0px;
+.submit-btn:active:enabled {
+    box-shadow: none;
     top: 5px;
     left: 5px;
+}
+
+.submit-btn:disabled {
+    box-shadow: none;
+    border: 3px solid var(--disabled-border);
+    color: var(--disabled-border);
 }
