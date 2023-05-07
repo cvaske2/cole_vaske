@@ -5,14 +5,13 @@ var contactForm = null;
 var defaultBorderColor = null;
 
 window.addEventListener('load', function() {
-
     contactForm = document.getElementById('contactForm');
     submitBtn = document.getElementById('submit-btn');
     defaultBorderColor = contactForm.message.style.border;
 });
 
 function submitForm(event) {
-   
+    event.preventDefault();
     let missing_fields = false;
 
     let message = contactForm.message.value;
@@ -40,9 +39,23 @@ function submitForm(event) {
         document.getElementById('regex_warning').style.visibility = 'collapse';
     }
 
-    if (missing_fields) {
-        event.preventDefault();
-        return;
+    if (!missing_fields) {
+        var url = "https://cse.unl.edu/~cvaske/callbacks/contact_submission.php";
+        var formData = new FormData();
+        formData.set("message", message);
+        formData.set("email", email);
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: formData
+        }).then(response => {
+            console.log(response);
+        }).catch((error) => {
+            console.log(error);
+        });
     }
 }
 
