@@ -42,6 +42,10 @@ function submitForm(event) {
     if (!missing_fields) {
         var url = "https://cse.unl.edu/~cvaske/callbacks/contact_submission.php";
         var formData = new FormData();
+        var payload = {
+            "message": message,
+            "email": email
+        }
         formData.set("message", message);
         formData.set("email", email);
 
@@ -50,8 +54,8 @@ function submitForm(event) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: formData
-        }).then(response => {
+            body: JSON.stringify(payload)
+        }).then((response) => {
             console.log(response);
         }).catch((error) => {
             console.log(error);
