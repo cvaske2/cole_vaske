@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
     defaultBorderColor = contactForm.message.style.border;
 });
 
-function submitForm(event) {
+async function submitForm(event) {
     event.preventDefault();
     let missing_fields = false;
 
@@ -49,16 +49,17 @@ function submitForm(event) {
         formData.set("message", message);
         formData.set("email", email);
 
-        fetch(url, {
+        var response = await fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(payload)
-        }).then((response) => {
-            console.log(response);
-        }).catch((error) => {
-            console.log(error);
+        }).then(async (response) => {
+            var body = await response.json();
+            console.log(body);
+        }).catch((err) => {
+            console.log(err);
         });
     }
 }
