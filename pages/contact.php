@@ -60,7 +60,13 @@
                             <span style='visibility: collapse;' name='regex_warning' id='regex_warning'>Invalid e-mail format. Try again and resubmit.</span>
                             <input type='text' name='email' id='email'>
                         </fieldset>
-                        <button class='submit-btn' id='submit-btn' type='button' onclick='submitForm(event)'>Submit</btn>
+                        <div>
+                            <button class='submit-btn' id='submit-btn' type='button' onclick='submitForm(event)'>Submit</btn>
+                        </div>
+                        <div style='visibility: collapse;' id='submission-note-container'>
+                            <p>Your form has been successfully submitted. Thank you for contacting me.</p>
+                            <p>Your supplied e-mail: <u><span id='user-email'></span></u> on <u><span id='submission-date'></span></u></p>
+                        </div>
                     </form>
                 </main>
             ";

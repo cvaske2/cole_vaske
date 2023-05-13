@@ -8,6 +8,15 @@ window.addEventListener('load', function() {
     contactForm = document.getElementById('contactForm');
     submitBtn = document.getElementById('submit-btn');
     defaultBorderColor = contactForm.message.style.border;
+
+    const contactSubmitted = localStorage.getItem('contactSubmitted');
+    if (contactSubmitted) {
+        disableFormElements();
+
+        const userEmail = localStorage.getItem('userEmail');
+        const submissionDate = localStorage.getItem('submissionDate');
+        showSubmissionNote(userEmail, submissionDate);
+    }
 });
 
 async function submitForm(event) {
@@ -56,8 +65,15 @@ async function submitForm(event) {
             },
             body: JSON.stringify(payload)
         }).then(async (response) => {
-            var body = await response.json();
-            console.log(body);
+            disableFormElements();
+
+            var res = await response.json();
+            var current_date = new Date(Date.now()).toLocaleString().split(',')[0];
+            showSubmissionNote(res.email, current_date);
+
+            localStorage.setItem("contactSubmitted", true);
+            localStorage.setItem("userEmail", res.email);
+            localStorage.setItem("submissionDate", current_date);
         }).catch((err) => {
             console.log(err);
         });
@@ -68,4 +84,10 @@ function disableFormElements() {
     contactForm.message.disabled = true;
     contactForm.email.disabled = true;
     submitBtn.disabled = true;
+}
+
+function showSubmissionNote(user_email, submission_date) {
+    document.getElementById('submission-note-container').style.visibility = 'visible';
+    document.getElementById('user-email').innerHTML = user_email;
+    document.getElementById('submission-date').innerHTML = submission_date;
 }
