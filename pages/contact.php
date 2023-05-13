@@ -1,7 +1,6 @@
 <?php
     require_once("../include/const.php");
     require_once("../include/logging.php");
-    define('BASE_DIR_PREFIX' , "../"); // Prefix to the base dir (for images, etc.)
 ?>
 <html>
     <head>
